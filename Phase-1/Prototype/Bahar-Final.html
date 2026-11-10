@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f5f0">
+<title>Bahar — orchard care for Nagpur Mandarin</title>
+<meta name="description" content="Bahar — orchard care for Nagpur Mandarin">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#ef8a1f;--or-d:#b85f05;--or-l:#fff1e0;--gr:#2c8a55;--gr-l:#e3f4ea;--bg:#f6f4ef;--card:#fff;--ink:#1f2d36;--mut:#66737c;--line:#e6e1d7;--red:#c8372d;--red-l:#fdeaea;--yel:#9a7000;--yel-l:#fff4cc;--blu:#2a69a8;--blu-l:#e6f0fa;--pur:#7b2ea0;--pur-l:#f4e7fa;--sh:0 2px 12px rgba(30,40,50,.07);--surf:#fff;--track:#eee;--soft:#f0ece4;--neu:#eeeae2;--hi-l:#ffe6d4;--or-b:#f5cf9f;--gr-b:#bfe3cc;--star:#d6d0c4;--cardb:#efebe3;--ax:#88939b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 "Noto Sans","Noto Sans Devanagari","Nirmala UI",system-ui,sans-serif}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+button:disabled{opacity:.4;cursor:not-allowed}
+input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--surf);width:100%;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid #f8cf9d;border-color:var(--or)}
+label.f{display:block;font-size:13px;color:var(--mut);font-weight:600;margin:10px 0 4px}
+h1{font-size:24px;margin:4px 0 14px;display:flex;align-items:center;gap:10px}
+h2{font-size:18px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+h3{font-size:15px;margin:14px 0 8px;color:var(--mut)}
+.top{position:sticky;top:0;z-index:20;background:var(--surf);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:8px 12px;height:58px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;cursor:pointer}
+.logo{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd08a,var(--or) 55%,var(--or-d));display:grid;place-items:center;font-size:17px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12);position:relative}
+.logo:after{content:"";position:absolute;top:-3px;right:6px;width:10px;height:7px;background:#3d9a4f;border-radius:10px 0 10px 0}
+.sp{flex:1}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700;background:var(--bg);white-space:nowrap}
+.pill.sim{background:var(--yel-l);color:var(--yel);border:1.5px solid #e9cf6d}
+.pill.on{background:var(--gr-l);color:var(--gr)}.pill.off{background:var(--red-l);color:var(--red)}
+.pill.pend{background:var(--blu-l);color:var(--blu)}
+.langs{display:flex;background:var(--bg);border-radius:999px;padding:3px}
+.langs button{padding:4px 9px;border-radius:999px;font-size:13px;font-weight:700;color:var(--mut)}
+.langs button.on{background:var(--surf);color:var(--or-d);box-shadow:var(--sh)}
+.ibtn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:var(--bg)}
+.layout{display:flex}
+.rail{width:94px;flex:0 0 94px;background:var(--surf);border-right:1px solid var(--line);padding:8px 6px;display:flex;flex-direction:column;gap:3px;position:sticky;top:58px;height:calc(100vh - 58px);overflow:auto}
+.nb{display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 2px;border-radius:14px;font-size:12px;font-weight:700;color:var(--mut);position:relative;text-align:center}
+.nb .i{font-size:25px;line-height:1.1}
+.nb.on{background:var(--or-l);color:var(--or-d)}
+.nb .bd{position:absolute;top:3px;right:10px;background:var(--red);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px}
+main{flex:1;padding:18px;max-width:1150px;margin:0 auto;width:100%;padding-bottom:40px;min-width:0}
+.bnav{display:none}
+.card{background:var(--card);border-radius:20px;box-shadow:var(--sh);padding:16px;margin-bottom:14px;border:1px solid var(--cardb)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.tile{background:var(--surf);border-radius:22px;box-shadow:var(--sh);padding:18px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:800;font-size:16px;position:relative;border:2px solid transparent;transition:transform .12s}
+.tile:hover{transform:translateY(-2px);border-color:var(--or)}
+.tile .i{font-size:44px;width:76px;height:76px;border-radius:50%;display:grid;place-items:center}
+.tile .bd{position:absolute;top:10px;right:12px;background:var(--red);color:#fff;font-size:13px;min-width:24px;height:24px;border-radius:12px;display:grid;place-items:center;padding:0 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:14px;font-weight:800;background:var(--or);color:#fff;font-size:16px;min-height:48px}
+.btn.g{background:#2c8a55}.btn.r{background:#c8372d}.btn.b{background:#2a69a8}
+.btn.o{background:var(--surf);color:var(--ink);border:2px solid var(--line)}
+.btn.sm{padding:7px 12px;min-height:38px;font-size:14px;border-radius:12px}
+.btn.big{font-size:20px;min-height:64px;padding:14px 26px;border-radius:18px}
+.btn.w{width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:9px 14px;border-radius:999px;background:var(--surf);border:2px solid var(--line);font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:6px;min-height:42px}
+.chip.on{border-color:var(--or);background:var(--or-l);color:var(--or-d)}
+.opt{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px}
+.opt button{background:var(--surf);border:2px solid var(--line);border-radius:16px;padding:10px 4px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12.5px;font-weight:700}
+.opt button .i{font-size:28px}
+.opt button.on{border-color:var(--or);background:var(--or-l)}
+.src{font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:6px;letter-spacing:.3px;vertical-align:middle}
+.s-SIM{background:var(--surf)4cc;color:#8a6400}.s-USER{background:#e6f0fa;color:#2a69a8}.s-IMG{background:#f4e7fa;color:#7b2ea0}.s-LAB{background:#e3f4ea;color:#2c8a55}.s-EXPERT{background:#1f2d36;color:#fff}.s-PRED{background:#eee;color:#555}
+.cat{display:inline-flex;align-items:center;gap:5px;font-weight:800;padding:5px 11px;border-radius:999px;font-size:14px}
+.c-LOW{background:var(--gr-l);color:var(--gr)}.c-MODERATE{background:var(--yel-l);color:var(--yel)}.c-HIGH{background:var(--hi-l);color:#b4500e}.c-CRITICAL{background:var(--red-l);color:var(--red)}
+.zc{cursor:pointer;border-top:6px solid var(--gr)}
+.zc.HIGH{border-top-color:#d9661f}.zc.MODERATE{border-top-color:#d4a200}.zc.CRITICAL{border-top-color:var(--red)}
+.zh{display:flex;align-items:center;justify-content:space-between}
+.zname{font-size:22px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+.st{background:var(--bg);border-radius:14px;padding:8px 10px;display:flex;align-items:center;gap:8px}
+.st .i{font-size:22px}.st b{font-size:17px;display:block}.st small{font-size:11.5px;color:var(--mut);display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:14px}
+.bar{height:10px;border-radius:6px;background:var(--track);overflow:hidden;position:relative}
+.bar>i{display:block;height:100%;border-radius:6px}
+.chart{width:100%;height:auto;display:block}
+.chart .gl{stroke:var(--track)}.chart .ax{font-size:10.5px;fill:var(--ax)}
+.rec{border-left:7px solid var(--line)}
+.rec.p1{border-left-color:var(--red)}.rec.p2{border-left-color:var(--or)}.rec.p3{border-left-color:var(--blu)}
+.pr{font-weight:800;font-size:13px;padding:3px 9px;border-radius:8px;color:#fff}
+.pr.p1{background:#c8372d}.pr.p2{background:#d9661f}.pr.p3{background:#2a69a8}
+.state{font-size:12px;font-weight:800;padding:3px 9px;border-radius:8px;background:var(--bg);color:var(--mut)}
+.evi{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.evi span{background:var(--bg);padding:5px 9px;border-radius:10px;font-size:13px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mut{color:var(--mut)}.small{font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;background:var(--bg);padding:8px;font-size:12.5px;color:var(--mut)}
+td{padding:8px;border-bottom:1px solid var(--soft);vertical-align:top}
+.tw{overflow:auto}
+.chk{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;background:var(--gr-l);margin-bottom:6px;font-weight:600}
+.chk.x{background:var(--red-l);color:var(--red)}
+.ring{width:140px;height:140px}
+.banner{padding:12px 14px;border-radius:14px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.banner.r{background:var(--red-l);color:var(--red)}.banner.y{background:var(--yel-l);color:var(--yel)}.banner.b{background:var(--blu-l);color:var(--blu)}.banner.g{background:var(--gr-l);color:var(--gr)}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:3px dashed #e9c9a0;border-radius:20px;padding:26px 10px;background:var(--or-l);cursor:pointer;font-weight:800;color:var(--or-d);text-align:center}
+.drop .i{font-size:48px}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.th{background:var(--surf);border-radius:14px;overflow:hidden;box-shadow:var(--sh);cursor:pointer;font-size:12px}
+.th img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.th div{padding:5px 7px;font-weight:700}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:48px;height:48px;border-radius:14px;background:var(--bg);font-size:24px;font-weight:800}
+.step input{text-align:center;font-size:20px;font-weight:800}
+.bignum{font-size:42px;font-weight:800;line-height:1}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.stars button{font-size:32px;color:var(--star)}.stars button.on{color:#f2a900}
+#modal .bg{position:fixed;inset:0;background:rgba(20,28,34,.45);z-index:50;display:grid;place-items:center;padding:16px}
+#modal .box{background:var(--surf);border-radius:22px;max-width:560px;width:100%;max-height:88vh;overflow:auto;padding:20px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:60;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+#toast div{background:#1f2d36;color:#fff;padding:11px 18px;border-radius:14px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:90vw}
+.login{max-width:980px;margin:0 auto;padding:22px 16px 40px}
+.hero{text-align:center;padding:16px 0 6px}
+.hero .logo{width:84px;height:84px;font-size:40px;margin:0 auto 8px}
+.hero .logo:after{width:22px;height:14px;top:-6px;right:16px}
+.hero h1{justify-content:center;font-size:32px;margin:0}
+.demo{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.demo button{background:var(--surf);border-radius:20px;box-shadow:var(--sh);padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;border:2px solid transparent}
+.demo button:hover{border-color:var(--or)}
+.demo .i{font-size:42px}.demo b{font-size:16px}.demo small{color:var(--mut);font-size:12px}
+.prog{height:16px;background:var(--blu-l);border-radius:9px;overflow:hidden}.prog i{display:block;height:100%;background:linear-gradient(90deg,#3d8ed8,#5fb3f0);transition:width .25s}
+.hl{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+@media(max-width:760px){
+ .rail{display:none}
+ .bnav{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--surf);border-top:1px solid var(--line);z-index:30;overflow-x:auto;padding:4px 4px calc(4px + env(safe-area-inset-bottom));gap:2px}
+ .bnav .nb{flex:0 0 68px;font-size:11px}
+ main{padding:12px;padding-bottom:110px}
+ .hs{display:none!important}
+ .top{gap:4px;padding:8px}
+ .tiles{grid-template-columns:repeat(2,1fr)}
+ h1{font-size:21px}
+ #toast{bottom:100px}
+}
+
+/* ---------- dark theme ---------- */
+:root[data-theme="dark"]{color-scheme:dark;--bg:#11171c;--card:#1a2229;--surf:#1a2229;--ink:#e7edf1;--mut:#9aa8b2;--line:#2f3b45;--track:#2c363f;--soft:#26313a;--neu:#26313a;--cardb:#25303a;
+ --or:#f0922e;--or-d:#ffb05c;--or-l:#3a2915;--gr:#4cc184;--gr-l:#173327;--red:#ff6b5f;--red-l:#3d1d1c;--yel:#f2c94c;--yel-l:#352c10;--blu:#6aaef0;--blu-l:#162a3d;--pur:#c48ae6;--pur-l:#2d1d3a;
+ --hi-l:#3f2614;--or-b:#6b4a22;--gr-b:#2c5a43;--star:#4a5560;--ax:#7d8b95;--sh:0 2px 14px rgba(0,0,0,.35)}
+:root[data-theme="dark"] .s-SIM{background:#3a3012;color:#f2c94c}:root[data-theme="dark"] .s-USER{background:#16304a;color:#7cb9f2}:root[data-theme="dark"] .s-IMG{background:#33204a;color:#d09cf0}
+:root[data-theme="dark"] .s-LAB{background:#173a2a;color:#5fd197}:root[data-theme="dark"] .s-EXPERT{background:#e7edf1;color:#11171c}:root[data-theme="dark"] .s-PRED{background:#2c363f;color:#c5ced5}
+:root[data-theme="dark"] .c-HIGH{color:#ff9d5c}:root[data-theme="dark"] .pill.sim{border-color:#6b5a1c}
+:root[data-theme="dark"] .drop{border-color:#6b4a22}:root[data-theme="dark"] .btn.o{background:var(--surf)}
+:root[data-theme="dark"] #toast div{background:#e7edf1;color:#11171c}
+:root[data-theme="dark"] .logo{box-shadow:inset 0 -3px 0 rgba(0,0,0,.25),0 0 0 2px #2a2016}
+body,.card,.top,.rail,.tile,.chip,input,select,textarea{transition:background-color .25s,color .25s,border-color .25s}
+/* ---------- theme switch ---------- */
+.tgl{position:relative;width:62px;height:34px;border-radius:999px;background:#dfe6ec;flex:0 0 62px;border:2px solid var(--line);padding:0}
+.tgl .k{position:absolute;top:2px;left:2px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);display:grid;place-items:center;font-size:15px;transition:transform .25s}
+.tgl .s{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;opacity:.55}.tgl .s.l{left:7px}.tgl .s.r{right:7px}
+:root[data-theme="dark"] .tgl{background:#2b3f55}
+:root[data-theme="dark"] .tgl .k{transform:translateX(28px);background:#0f1a24}
+.tgl:focus-visible{outline:3px solid #f8cf9d;outline-offset:2px}
+
+/* =================== refined finish =================== */
+:root{--pri:#1f3b33;--pri-l:#e8efea;--on-pri:#fff;--acc:#c46f1c;--bg:#f7f5f0;--line:#e5e1d8;--ink:#1c2924;--mut:#6b766f;--soft:#f1eee7;
+ --serif:"Fraunces","Noto Serif Devanagari",Georgia,serif;--sans:"Inter","Noto Sans Devanagari","Nirmala UI",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root[data-theme="dark"]{--pri:#e3b06e;--pri-l:#2b261d;--on-pri:#14191d;--acc:#e3b06e;--soft:#222c34}
+html,body{font-family:var(--sans);font-size:15.5px;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
+svg.ic{width:1.15em;height:1.15em;vertical-align:-.2em;flex:0 0 auto}
+h1{font-family:var(--serif);font-weight:600;font-size:28px;letter-spacing:-.015em;margin:2px 0 18px;gap:12px}
+h1 svg.ic{color:var(--acc);width:.85em;height:.85em}
+h2{font-size:15px;font-weight:600;letter-spacing:.01em;margin:0 0 12px}
+h2 svg.ic{color:var(--mut)}
+h3{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin:16px 0 8px}
+.eyebrow{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin:20px 0 12px}
+.wm{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+.top{height:60px;padding:8px 18px;box-shadow:none}
+.brand{font-size:19px;gap:10px}
+.logo{width:30px;height:30px;font-size:0;background:radial-gradient(circle at 38% 34%,#f3b46a,#d97f24 60%,#b0601a);box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+.logo:after{top:-4px;right:5px;width:11px;height:7px;background:#3f7a52;border-radius:10px 0 10px 0}
+.hero{padding:30px 0 4px}.hero .logo{width:64px;height:64px;margin-bottom:14px}.hero .logo:after{width:20px;height:12px;top:-7px;right:12px}
+.hero h1{font-size:40px;margin:0 0 6px}.hero p{font-size:15px;letter-spacing:.02em}
+.pill{font-weight:500;border-radius:8px;padding:6px 10px;font-size:12.5px}
+.pill.sim{background:transparent;border:1px solid var(--line);color:var(--mut);letter-spacing:.06em;font-size:11px;font-weight:600}
+.pill.sim svg{color:var(--yel)}
+.langs{border-radius:9px;padding:3px}.langs button{border-radius:7px;font-weight:600}
+.langs button.on{color:var(--ink)}
+.ibtn{width:38px;height:38px;border-radius:9px;font-size:18px;color:var(--mut)}
+.rail{width:88px;flex-basis:88px;padding:12px 8px;gap:2px;top:60px;height:calc(100vh - 60px)}
+.nb{font-weight:500;font-size:11.5px;border-radius:10px;padding:9px 2px 8px;gap:4px}
+.nb .i{font-size:20px;line-height:1}
+.nb.on{background:var(--pri-l);color:var(--pri)}
+.nb.on .i{color:var(--pri)}
+.nb .bd,.tile .bd{background:var(--acc);color:#fff;font-weight:600;font-size:10.5px;min-width:17px;height:17px;top:6px}
+:root[data-theme="dark"] .nb .bd,:root[data-theme="dark"] .tile .bd{color:#14191d}
+.tile .bd{top:12px;right:12px}
+main{padding:26px 28px 48px}
+.card{border-radius:14px;box-shadow:none;border:1px solid var(--line);padding:18px 20px}
+:root[data-theme="dark"] .card{border-color:var(--cardb)}
+.tiles{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.tile{border-radius:14px;box-shadow:none;border:1px solid var(--line);padding:22px 12px 18px;font-weight:500;font-size:14.5px;gap:12px}
+.tile:hover{transform:none;border-color:var(--pri);background:var(--surf)}
+.tile .i{width:52px;height:52px;border-radius:13px;font-size:24px;background:var(--soft)!important;color:var(--pri)}
+.btn{border-radius:10px;font-weight:600;font-size:15px;background:var(--pri);color:var(--on-pri);min-height:44px;padding:10px 18px;letter-spacing:.01em}
+.btn:hover{filter:brightness(1.08)}
+.btn.g{background:#2f6f4e}.btn.r{background:#a83a30}.btn.b{background:#2b5c8c}
+.btn.g,.btn.r,.btn.b{color:#fff}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.o:hover{border-color:var(--pri);filter:none}
+.btn.big{font-size:16px;min-height:52px;border-radius:12px;padding:12px 24px}
+.btn.sm{border-radius:8px}
+.chip{border-radius:9px;border-width:1px;font-weight:500;min-height:38px;padding:7px 13px;font-size:13.5px;background:var(--surf)}
+.chip.on{border-color:var(--pri);background:var(--pri-l);color:var(--pri);font-weight:600}
+.opt{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+.opt button{border-width:1px;border-radius:12px;font-weight:500;font-size:12.5px;padding:12px 4px 10px;gap:7px}
+.opt button .i{font-size:22px;color:var(--mut)}
+.opt button.on{border-color:var(--pri);background:var(--pri-l);color:var(--pri)}
+.opt button.on .i{color:var(--pri)}
+.cat{font-weight:600;border-radius:7px;font-size:13px;padding:4px 10px}
+.state{border-radius:6px;font-weight:600;font-size:11.5px;letter-spacing:.02em}
+.pr{border-radius:6px;font-weight:600;font-size:11.5px;letter-spacing:.04em}
+.src{font-weight:600;border-radius:4px;font-size:9.5px;letter-spacing:.06em;padding:2px 5px}
+.zc{border-top:3px solid var(--gr)}.zc.HIGH{border-top-color:#d9661f}.zc.MODERATE{border-top-color:#d4a200}.zc.CRITICAL{border-top-color:var(--red)}
+.zname{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em}
+.st{border-radius:10px;background:var(--soft);padding:9px 11px}
+.st .i{font-size:19px;color:var(--mut)}.st b{font-weight:600;font-size:16px}
+.kpis .st{background:var(--surf);border:1px solid var(--line)}
+.bignum{font-family:var(--serif);font-weight:600}
+.rec{border-left-width:3px}
+.evi span{border-radius:7px;font-size:12.5px;background:var(--soft)}
+.chk{border-radius:9px;font-weight:500;font-size:14px}
+.banner{border-radius:10px;font-weight:500;font-size:14px}
+.drop{border:1.5px dashed var(--line);background:var(--soft);color:var(--ink);font-weight:500;border-radius:14px}
+.drop .i{font-size:30px;color:var(--pri)}
+.th{border-radius:10px;box-shadow:none;border:1px solid var(--line)}
+.th div{font-weight:500}
+.step button{border-radius:10px;font-weight:500;font-size:20px;border:1px solid var(--line)}
+.stars button{font-size:28px;padding:2px}
+.stars button.on{color:#d4a017}.stars button.on svg path{fill:currentColor}
+#modal .box{border-radius:16px;padding:24px}
+#modal .bg{backdrop-filter:blur(2px)}
+#toast div{border-radius:10px;font-weight:500;font-size:14px;display:flex;align-items:center;gap:8px}
+.demo{gap:10px}
+.demo button{border-radius:14px;box-shadow:none;border:1px solid var(--line);padding:18px 10px 16px;gap:5px}
+.demo button:hover{border-color:var(--pri)}
+.demo .i{font-size:22px;width:46px;height:46px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--pri);margin-bottom:4px}
+.demo b{font-weight:600;font-size:15px}
+.ico{display:inline-grid;place-items:center;width:50px;height:50px;border-radius:12px;background:var(--soft);color:var(--pri);font-size:24px;flex:0 0 auto}
+.ico.s{width:34px;height:34px;border-radius:9px;font-size:17px}
+.ico.xl{display:grid;width:72px;height:72px;border-radius:50%;font-size:32px;margin:12px auto;color:var(--mut)}
+.tgl{width:56px;flex-basis:56px;height:30px;border-width:1px;background:var(--soft)}
+.tgl .k{width:24px;height:24px;font-size:13px;color:#c46f1c;top:2px;left:2px}
+.tgl .s{font-size:11px;color:var(--mut);opacity:.7}.tgl .s.l{left:6px}.tgl .s.r{right:6px}
+:root[data-theme="dark"] .tgl{background:#1d2a35}
+:root[data-theme="dark"] .tgl .k{transform:translateX(26px);color:#e3b06e}
+table{font-size:13.5px}th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+label.f{font-weight:500;font-size:12.5px}
+input,select,textarea{border-width:1px;border-radius:10px;padding:10px 12px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--pri-l);border-color:var(--pri)}
+@media(max-width:760px){main{padding:16px 14px 110px}.top{padding:8px 10px}h1{font-size:24px}.tiles{grid-template-columns:repeat(2,1fr)}.bnav .nb{flex:0 0 66px}}
+
+/* ---------- Bahar lockup ---------- */
+.hero .deva{font-family:"Noto Sans Devanagari",var(--sans);font-size:16px;letter-spacing:0;color:var(--acc);margin:0 0 4px;font-weight:600}
+.hero h1.lockup{display:block;text-align:center;font-size:44px;line-height:1.15;margin:0 auto 8px;max-width:760px}
+.hero .lockup .wm{font-size:48px}
+.hero .lockup .tagl{font-family:var(--serif);font-style:italic;font-weight:500;font-size:26px;color:var(--mut);letter-spacing:0}
+.brand .wm{font-size:22px;letter-spacing:-.01em}
+@media(max-width:760px){.hero h1.lockup{font-size:34px}.hero .lockup .wm{font-size:40px}.hero .lockup .tagl{display:block;font-size:20px;margin-top:4px}}
+
+/* =================== landing (split layout) =================== */
+.auth{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:100vh}
+.bpanel{position:relative;overflow:hidden;background:#1f3b33;color:#f3efe6;display:flex;flex-direction:column;justify-content:space-between;padding:36px 48px 32px}
+:root[data-theme="dark"] .bpanel{background:#0f1c17;border-right:1px solid #22302a}
+.rind{position:absolute;width:560px;height:560px;right:-180px;bottom:-200px;color:#f3efe6;opacity:.07;pointer-events:none}
+.bmark{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:19px;position:relative}
+.bmark .logo{width:26px;height:26px}.bmark .logo:after{width:9px;height:6px;top:-3px;right:4px}
+.block{position:relative;max-width:460px}
+.bword{font-family:var(--serif);font-weight:500;font-size:clamp(64px,8vw,104px);line-height:.95;letter-spacing:-.03em;color:#fbf8f2}
+.brule{width:56px;height:2px;background:#e3a457;margin:26px 0 18px;border-radius:2px}
+.btag{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#d9cfbd;line-height:1.7}
+.bfoot{position:relative;display:flex;flex-direction:column;gap:3px;font-size:12px;color:rgba(243,239,230,.55);letter-spacing:.01em}
+.bfoot span:first-child{color:rgba(243,239,230,.8)}
+.apanel{background:var(--bg);display:flex;flex-direction:column;padding:24px 32px 40px}
+.atop{display:flex;justify-content:flex-end;align-items:center;gap:10px}
+.acol{width:100%;max-width:400px;margin:auto;padding:28px 0}
+.ah{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.015em;margin:0 0 18px;display:block}
+.acol .btn.w{margin-top:2px;min-height:48px}
+.alink{text-align:center;margin:14px 0 0}.alink button{color:var(--mut);font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.alink button:hover{color:var(--ink)}
+.adiv{display:flex;align-items:center;gap:12px;margin:30px 0 14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.adiv:before,.adiv:after{content:"";flex:1;height:1px;background:var(--line)}
+.adiv span{white-space:nowrap}
+.dlist{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surf)}
+.drow{display:flex;align-items:center;gap:12px;padding:11px 14px;text-align:left;border-top:1px solid var(--line);transition:background-color .15s}
+.drow:first-child{border-top:0}.drow:hover{background:var(--soft)}
+.di{width:34px;height:34px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--pri);font-size:16px;flex:0 0 34px}
+.dt{flex:1;min-width:0;display:flex;flex-direction:column}
+.dt b{font-weight:600;font-size:14.5px}.dt small{color:var(--mut);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dch{color:var(--mut);font-size:15px;opacity:.6}.drow:hover .dch{opacity:1;color:var(--pri)}
+@media(max-width:860px){
+ .auth{grid-template-columns:1fr;min-height:0}
+ .bpanel{padding:22px 22px 30px;min-height:0;gap:34px}
+ .bword{font-size:64px}.brule{margin:18px 0 12px}.btag{font-size:11.5px;letter-spacing:.18em}
+ .bfoot{display:none}.rind{width:380px;height:380px;right:-150px;bottom:-170px}
+ .apanel{padding:16px 16px 40px}.acol{padding:12px 0 0;margin:0 auto}
+}
+
+
+/* ---- sign-in refinements ---- */
+.pw{position:relative}.pw input{padding-right:46px}
+.pwt{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:8px;display:grid;place-items:center;color:var(--mut);font-size:17px}
+.pwt:hover{color:var(--ink);background:var(--soft)}
+.aerr{display:none;margin:12px 0 2px;padding:10px 12px;border-radius:9px;background:var(--red-l);color:var(--red);font-size:13.5px;font-weight:500}
+.aerr.show{display:block}
+.acol .btn.w{margin-top:16px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--soft);padding:4px;border-radius:10px}
+.seg button{display:flex;align-items:center;justify-content:center;gap:7px;padding:9px;border-radius:7px;font-size:14px;font-weight:500;color:var(--mut)}
+.seg button.on{background:var(--surf);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hint{font-size:12px;color:var(--mut);margin:6px 0 0}
+.snote{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--surf);font-size:13px;color:var(--mut);margin-bottom:18px;line-height:1.45}
+.snote svg{color:var(--acc);margin-top:1px}
+/* =================== professional app shell =================== */
+.shell{display:flex;min-height:100vh}
+.side{width:244px;flex:0 0 244px;background:#1f3b33;color:#e9e3d6;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:22px 14px 14px;overflow:auto;z-index:25}
+:root[data-theme="dark"] .side{background:#0f1c17;border-right:1px solid #22302a}
+.sbrand{display:flex;align-items:center;gap:11px;padding:0 10px;cursor:pointer}
+.sbrand .logo{width:30px;height:30px}.sbrand .logo:after{width:10px;height:7px;top:-4px;right:4px}
+.sname{font-family:var(--serif);font-weight:600;font-size:22px;color:#fbf8f2;line-height:1}
+.stag{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(233,227,214,.55);margin-top:5px}
+.slabel{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(233,227,214,.45);margin:30px 12px 8px}
+.snav{display:flex;flex-direction:column;gap:2px}
+.side .nb{flex-direction:row;justify-content:flex-start;align-items:center;gap:12px;padding:9px 12px;border-radius:8px;font-size:14px;font-weight:500;color:rgba(233,227,214,.72);text-align:left;width:100%}
+.side .nb .i{font-size:18px;color:inherit}
+.side .nb:hover{background:rgba(255,255,255,.06);color:#fbf8f2}
+.side .nb.on{background:rgba(255,255,255,.1);color:#fff}
+.side .nb.on .i{color:#e3a457}
+.side .nb.on:before{content:"";position:absolute;left:-14px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:#e3a457}
+.side .nb .bd{position:static;margin-left:auto;background:#e3a457;color:#1f3b33;min-width:20px;height:20px;border-radius:10px;font-size:11px}
+.suser{margin-top:auto;display:flex;align-items:center;gap:10px;padding:14px 8px 2px;border-top:1px solid rgba(255,255,255,.1)}
+.sav{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;color:#e3a457;font-size:16px;flex:0 0 34px}
+.sinfo{flex:1;min-width:0;display:flex;flex-direction:column}
+.sinfo b{font-size:13.5px;font-weight:600;color:#fbf8f2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sinfo small{font-size:11.5px;color:rgba(233,227,214,.55)}
+.slog{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;color:rgba(233,227,214,.7);font-size:17px}
+.slog:hover{background:rgba(255,255,255,.08);color:#fff}
+.mainwrap{flex:1;min-width:0;display:flex;flex-direction:column}
+.shell .top{background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);height:56px;padding:8px 28px}
+.shell .top .mob{display:none}
+.crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);white-space:nowrap;overflow:hidden}
+.crumb b{color:var(--ink);font-weight:600}.crumb .sep{opacity:.5}
+.shell main{padding:30px 40px 56px;max-width:1180px}
+.ph{margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.ph-eb{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 8px}
+.ph h1{font-size:34px;margin:0;line-height:1.1}
+.ph h1 svg.ic{display:none}
+.card>h2:first-child{padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.card>h2:first-child svg.ic{color:var(--acc)}
+.focus{border-left:3px solid var(--acc)}.focus.ok{border-left-color:var(--gr)}
+.focus .ico{background:var(--or-l);color:var(--acc)}.focus.ok .ico{background:var(--gr-l);color:var(--gr)}
+.tiles{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tile{flex-direction:row;justify-content:flex-start;align-items:center;text-align:left;padding:14px 16px;gap:14px;font-size:14.5px;font-weight:500}
+.tile .i{width:40px;height:40px;border-radius:10px;font-size:18px}
+.tile:after{content:"→";margin-left:auto;color:var(--mut);font-size:15px;transition:transform .15s}
+.tile:hover:after{transform:translateX(3px);color:var(--pri)}
+.tile .bd{position:static;margin-left:auto;min-width:20px;height:20px;border-radius:10px}
+.tile:has(.bd):after{margin-left:10px}
+.zc .zname{font-size:22px}
+.btn{box-shadow:0 1px 0 rgba(0,0,0,.04)}
+th{background:transparent;border-bottom:1px solid var(--line)}
+@media(max-width:1100px){.side{width:212px;flex-basis:212px}.shell main{padding:24px 26px 48px}}
+@media(max-width:760px){
+ .side{display:none}
+ .shell .top{padding:8px 10px;height:58px;background:var(--surf)}
+ .shell .top .mob{display:flex}.shell .top .pill.mob{display:none}
+ .shell .top .brand .wm{display:inline!important;font-size:20px}.shell .top .brand{gap:8px;margin-right:4px}.shell .top .pill.sim{padding:6px 8px}
+ .crumb{display:none}
+ .shell main{padding:18px 14px 110px}
+ .ph{margin-bottom:18px;padding-bottom:14px}.ph h1{font-size:27px}
+ .tiles{grid-template-columns:1fr 1fr}
+ .tile{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+ .tile:after{display:none}.tile .bd{position:absolute;top:12px;right:12px}
+ .bnav .nb.on{background:var(--pri-l);color:var(--pri)}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="modal"></div>
+<div id="toast"></div>
+<script>
+'use strict';
+/* =========================================================================
+   Bahar — orchard care for Nagpur Mandarin. Phase 1 software-only MVP (single file)
+   All sensor data is SIMULATED. Advisory only. No equipment is operated.
+   ========================================================================= */
+const KEY='bahar_mvp_v1', SKEY='bahar_session_v1', LKEY='bahar_lang', TKEY='bahar_theme';
+/* ---- storage: localStorage -> sessionStorage -> in-memory (works even where the browser blocks storage) ---- */
+const MEM={};
+const STORE_KIND=(()=>{for(const k of ['localStorage','sessionStorage']){try{const s=window[k];s.setItem('__bahar_t','1');s.removeItem('__bahar_t');return k}catch(e){}}return 'memory'})();
+const store={get(k){try{if(STORE_KIND!=='memory'){const v=window[STORE_KIND].getItem(k);if(v!=null)return v}}catch(e){}return Object.prototype.hasOwnProperty.call(MEM,k)?MEM[k]:null},
+ set(k,v){MEM[k]=String(v);if(STORE_KIND==='memory')return true;try{window[STORE_KIND].setItem(k,v);return true}catch(e){return false}},
+ del(k){delete MEM[k];try{if(STORE_KIND!=='memory')window[STORE_KIND].removeItem(k)}catch(e){}}};
+
+/* ---- user credential store: salted, iterated SHA-256 (pure JS, works offline and in any context) ---- */
+const SHA_K=[],SHA_H=[];(()=>{let n=0;for(let c=2;n<64;c++){let pr=true;for(let i=2;i*i<=c;i++)if(c%i===0){pr=false;break}if(pr){if(n<8)SHA_H[n]=(Math.pow(c,.5)*4294967296)|0;SHA_K[n++]=(Math.pow(c,1/3)*4294967296)|0}}})();
+function sha256s(str){const rr=(v,a)=>(v>>>a)|(v<<(32-a));const s=unescape(encodeURIComponent(str)),w=[];let i;
+ for(i=0;i<s.length;i++)w[i>>2]|=s.charCodeAt(i)<<((3-i%4)*8);w[i>>2]|=0x80<<((3-i%4)*8);
+ const nw=((s.length+8)>>6)*16+16;w[nw-1]=s.length*8;let H=SHA_H.slice();
+ for(let j=0;j<nw;j+=16){const W=[];for(let k=0;k<16;k++)W[k]=w[j+k]|0;const old=H.slice();
+  for(i=0;i<64;i++){if(i>=16){const a=W[i-15],b=W[i-2];W[i]=(W[i-16]+(rr(a,7)^rr(a,18)^(a>>>3))+W[i-7]+(rr(b,17)^rr(b,19)^(b>>>10)))|0}
+   const a=H[0],e=H[4],t1=(H[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&H[5])^(~e&H[6]))+SHA_K[i]+W[i])|0,t2=((rr(a,2)^rr(a,13)^rr(a,22))+((a&H[1])^(a&H[2])^(H[1]&H[2])))|0;
+   H=[(t1+t2)|0].concat(H);H[4]=(H[4]+t1)|0;H.pop()}
+  for(i=0;i<8;i++)H[i]=(H[i]+old[i])|0}
+ return H.map(x=>(x>>>0).toString(16).padStart(8,'0')).join('')}
+const PW_ITER=400;
+function pwHash(salt,pw){let x=salt+'|'+pw;for(let i=0;i<PW_ITER;i++)x=sha256s(x+'|'+salt);return x}
+function randHex(n){try{const a=new Uint8Array(n);crypto.getRandomValues(a);return [...a].map(b=>b.toString(16).padStart(2,'0')).join('')}catch(e){let s='';for(let i=0;i<n*2;i++)s+=Math.floor(Math.random()*16).toString(16);return s}}
+const normId=v=>{let s=String(v||'').trim().toLowerCase().replace(/\s+/g,'');if(/^\+?[\d\-()]+$/.test(s)){s=s.replace(/[^\d]/g,'');if(s.length===12&&s.startsWith('91'))s=s.slice(2);if(s.length===11&&s.startsWith('0'))s=s.slice(1)}return s};
+const normPw=v=>String(v||'').trim();
+function setPw(u,pw){u.salt=randHex(16);u.hash=pwHash(u.salt,normPw(pw));delete u.ph}
+function checkPw(u,pw){pw=normPw(pw);if(u.hash&&u.salt)return pwHash(u.salt,pw)===u.hash;if(u.ph)return u.ph===hashStr('salt:'+pw);return false}
+function mkUser(name,identifier,pw,role,id){const u={id:id||'u'+Date.now().toString(36)+randHex(2),name,identifier:normId(identifier),role,created:Date.now(),lastLogin:null,failed:0,lockUntil:0};setPw(u,pw);return u}
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const r1=x=>Math.round(x*10)/10, r2=x=>Math.round(x*100)/100, r3=x=>Math.round(x*1000)/1000;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uuid=()=>{try{return crypto.randomUUID()}catch(e){return 'u'+Date.now().toString(36)+Math.random().toString(36).slice(2)}};
+function hashStr(s){let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)}return (h>>>0).toString(16).padStart(8,'0')}
+async function sha256(str){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return 'x'+hashStr(str)+hashStr(str.slice(str.length>>1))+str.length}}
+function rng(seed){let a=seed>>>0;return()=>{a=(a+0x6D2B79F5)|0;let t=Math.imul(a^a>>>15,1|a);t=(t+Math.imul(t^t>>>7,61|t))^t;return((t^t>>>14)>>>0)/4294967296}}
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmtT=ts=>{const d=new Date(ts);return `${String(d.getDate()).padStart(2,'0')} ${MON[d.getMonth()]} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`};
+const fmtD=ts=>{const d=new Date(ts);return `${String(d.getDate()).padStart(2,'0')} ${MON[d.getMonth()]}`};
+const isoD=ts=>new Date(ts-new Date(ts).getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const fmtN=v=>Math.abs(v)>=100?Math.round(v):Math.abs(v)>=10?r1(v):r2(v);
+
+/* ---- line icon set (inline SVG, no external assets) ---- */
+const ICONS={"home": "<path d=\"M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/>", "map": "<path d=\"M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z\"/><path d=\"M9 4v14M15 6v14\"/>", "bulb": "<path d=\"M9 18h6M10 21h4\"/><path d=\"M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z\"/>", "drop": "<path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/>", "camera": "<path d=\"M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z\"/><circle cx=\"12\" cy=\"13.5\" r=\"3.5\"/>", "citrus": "<circle cx=\"12\" cy=\"14\" r=\"7\"/><path d=\"M12 7c0-2 1.6-3.6 4-4-.2 2.4-1.8 4-4 4z\"/><path d=\"M12 11v6M9 14h6\"/>", "chart": "<path d=\"M3 3v18h18\"/><path d=\"m7 15 4-4 3 3 5-6\"/>", "tree": "<path d=\"M12 21v-6\"/><path d=\"M12 3a5 5 0 0 0-4.6 7A4 4 0 0 0 8 18h8a4 4 0 0 0 .6-8A5 5 0 0 0 12 3z\"/>", "scan": "<circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m20 20-4.4-4.4\"/><path d=\"m8.5 11 1.8 1.8 3.2-3.3\"/>", "folder": "<path d=\"M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/>", "alert": "<path d=\"M12 4 2.5 20h19z\"/><path d=\"M12 10v4M12 17h.01\"/>", "check": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/>", "tick": "<path d=\"m5 12.5 4.5 4.5L19 7\"/>", "ban": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m5.6 5.6 12.8 12.8\"/>", "flask": "<path d=\"M9 3h6M10 3v6L4.5 19a1.3 1.3 0 0 0 1.2 2h12.6a1.3 1.3 0 0 0 1.2-2L14 9V3\"/><path d=\"M7 15h10\"/>", "shield": "<path d=\"M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z\"/>", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/>", "moon": "<path d=\"M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z\"/>", "rain": "<path d=\"M7 15a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8a3.5 3.5 0 0 1 0 7z\"/><path d=\"m8 18-1 3M12 18l-1 3M16 18l-1 3\"/>", "cloud": "<path d=\"M7 18a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 11a3.5 3.5 0 0 1 0 7z\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>", "hourglass": "<path d=\"M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9\"/>", "leaf": "<path d=\"M5 19c0-8 5-13 14-14-1 9-6 14-14 14z\"/><path d=\"m5 19 8-8\"/>", "x": "<path d=\"M6 6l12 12M18 6 6 18\"/>", "help": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7M12 17h.01\"/>", "edit": "<path d=\"M4 20h4L19 9l-4-4L4 16z\"/><path d=\"m13.5 6.5 4 4\"/>", "calendar": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15\" rx=\"2\"/><path d=\"M3.5 10h17M8 3v4M16 3v4\"/>", "play": "<path d=\"M7 5v14l11-7z\"/>", "list": "<path d=\"M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01\"/>", "wrench": "<path d=\"M14.7 6.3a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3l8.7-8.7z\" transform=\"translate(-1 0)\"/><path d=\"M14 3.5a4.5 4.5 0 0 1 6.5 6.5\"/>", "wifioff": "<path d=\"M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 12.5a10 10 0 0 1 4-2.3M19 12.5a10 10 0 0 0-3-2M12 20h.01\"/>", "half": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 4a8 8 0 0 1 0 16z\" fill=\"currentColor\"/>", "spots": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"9\" cy=\"10\" r=\"1.6\" fill=\"currentColor\"/><circle cx=\"14.5\" cy=\"9\" r=\"1.1\" fill=\"currentColor\"/><circle cx=\"13.5\" cy=\"15\" r=\"1.9\" fill=\"currentColor\"/>", "octagon": "<path d=\"M8 3h8l5 5v8l-5 5H8l-5-5V8z\"/><path d=\"M12 8v5M12 16h.01\"/>", "star": "<path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z\"/>", "thermo": "<path d=\"M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z\"/>", "blur": "<path d=\"M4 8h16M3 12h18M5 16h14M8 20h8\"/>", "archive": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"5\" rx=\"1\"/><path d=\"M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4\"/>", "msg": "<path d=\"M4 5h16v11H9l-5 4z\"/>", "pause": "<path d=\"M9 5v14M15 5v14\"/>", "inbox": "<path d=\"M3 13h5l1.5 3h5L16 13h5\"/><path d=\"M5.5 5h13L21 13v6H3v-6z\"/>", "flame": "<path d=\"M12 21a6 6 0 0 0 6-6c0-4-3-6-4-10-2 2-3 4-3 6-1-1-1.5-2-1.5-3C7 10 6 12.5 6 15a6 6 0 0 0 6 6z\"/>", "waves": "<path d=\"M2 8c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 13c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 18c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0\"/>", "zap": "<path d=\"M13 2 4 14h7l-1 8 9-12h-7z\"/>", "dashed": "<circle cx=\"12\" cy=\"12\" r=\"8\" stroke-dasharray=\"3 3\"/>", "logout": "<path d=\"M9 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4M16 17l5-5-5-5M21 12H9\"/>", "trenddown": "<path d=\"m3 7 6 6 4-4 8 8\"/><path d=\"M15 17h6v-6\"/>", "trendup": "<path d=\"m3 17 6-6 4 4 8-8\"/><path d=\"M15 7h6v6\"/>", "scale": "<path d=\"M12 3v18M7 21h10M5 7h14\"/><path d=\"m5 7-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z\"/>", "image": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><circle cx=\"9\" cy=\"10\" r=\"2\"/><path d=\"m21 16-5-5-9 9\"/>", "refresh": "<path d=\"M20 11a8 8 0 0 0-14.8-3.5L3 10M4 13a8 8 0 0 0 14.8 3.5L21 14\"/><path d=\"M3 4v6h6M21 20v-6h-6\"/>", "eye": "<path d=\"M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>", "plus": "<path d=\"M12 5v14M5 12h14\"/>", "minus": "<path d=\"M5 12h14\"/>", "sliders": "<path d=\"M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12\"/><circle cx=\"16\" cy=\"6\" r=\"2\"/><circle cx=\"10\" cy=\"12\" r=\"2\"/><circle cx=\"18\" cy=\"18\" r=\"2\"/>", "users": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6\"/>", "bars": "<path d=\"M4 20V10M10 20V4M16 20v-7M22 20H2\"/>", "flower": "<circle cx=\"12\" cy=\"5.5\" r=\"2.5\"/><circle cx=\"12\" cy=\"12.5\" r=\"2.5\"/><circle cx=\"8.5\" cy=\"9\" r=\"2.5\"/><circle cx=\"15.5\" cy=\"9\" r=\"2.5\"/><path d=\"M12 15v6\"/>", "sprout": "<path d=\"M12 21v-9\"/><path d=\"M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 10c0-3 2.5-5.5 7-5.5 0 3.5-2.5 5.5-7 5.5z\"/>", "fruitsm": "<circle cx=\"12\" cy=\"14\" r=\"6\"/><path d=\"M12 8V4.5M12 6.5c1.2-1.6 3-2 4.6-1.7-.5 1.6-2.4 2.3-4.6 1.7z\"/>", "cluster": "<circle cx=\"8.5\" cy=\"15\" r=\"3\"/><circle cx=\"15.5\" cy=\"15\" r=\"3\"/><circle cx=\"12\" cy=\"9\" r=\"3\"/>", "wind": "<path d=\"M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8\"/>", "dropoff": "<path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/><path d=\"M4 4l16 16\"/>", "pin": "<path d=\"M12 17v4M8 3h8l-1 6 3 4H6l3-4z\"/>", "bug": "<rect x=\"8\" y=\"7\" width=\"8\" height=\"12\" rx=\"4\"/><path d=\"M12 7V4M8 11H4M20 11h-4M8 15H5M19 15h-3\"/>", "alertc": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.5v5.5M12 16.5h.01\"/>", "user": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>", "key": "<circle cx=\"8\" cy=\"15\" r=\"4\"/><path d=\"m11 12 9-9M17 6l3 3\"/>", "lock": "<rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3\"/>", "unlock": "<rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 7.5-2\"/>", "arrowr": "<path d=\"M5 12h14M13 6l6 6-6 6\"/>", "bell": "<path d=\"M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z\"/><path d=\"M10 21h4\"/>", "hash": "<path d=\"M5 9h15M4 15h15M10 3 8 21M16 3l-2 18\"/>", "upload": "<path d=\"M12 16V4M7 9l5-5 5 5M4 17v3h16v-3\"/>", "download": "<path d=\"M12 4v12M7 11l5 5 5-5M4 17v3h16v-3\"/>", "search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-4-4\"/>", "tag": "<path d=\"M3 12V3h9l9 9-9 9z\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\"/>", "layers": "<path d=\"m12 3 9 5-9 5-9-5z\"/><path d=\"m3 13 9 5 9-5\"/>", "db": "<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3\"/>", "arrowup": "<path d=\"M12 19V5M6 11l6-6 6 6\"/>", "clipboard": "<rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"/><path d=\"M9 4V3h6v1M9 10h6M9 14h6\"/>", "stop": "<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"1.5\"/>", "target": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/>", "ruler": "<path d=\"m3 17 14-14 4 4L7 21z\"/><path d=\"m7 13 2 2M10 10l2 2M13 7l2 2\"/>", "trash": "<path d=\"M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13\"/>", "grid": "<rect x=\"4\" y=\"4\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"13\" y=\"4\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"4\" y=\"13\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"13\" y=\"13\" width=\"7\" height=\"7\" rx=\"1\"/>", "file": "<path d=\"M6 3h8l5 5v13H6z\"/><path d=\"M14 3v5h5\"/>", "save": "<path d=\"M5 3h11l4 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z\"/><path d=\"M8 3v5h7V3M8 21v-7h8v7\"/>"};
+function ic(n,c){return `<svg class="ic${c?' '+c:''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]||''}</svg>`}
+const I=new Proxy({},{get:(o,k)=>ic(k)});
+
+/* ---------------------------- constants ---------------------------- */
+const DEF={T_low:32,T_high:42,RH_low:50,RH_crit:20,Kc:0.65,w_esi:0.30,w_irr:0.15,w_img:0.15,w_drop:0.30,w_stage:0.10,drop_guard:15,conf_min:0.70,margin_min:0.20,max_net:40,max_vol:250,verify_ok:0.70,verify_low:0.40};
+const THR_BOUNDS={T_low:[20,45],T_high:[25,50],RH_low:[10,90],RH_crit:[5,60],Kc:[0.3,1.2],w_esi:[0,1],w_irr:[0,1],w_img:[0,1],w_drop:[0,1],w_stage:[0,1],drop_guard:[1,60],conf_min:[0.3,0.99],margin_min:[0,0.9],max_net:[5,100],max_vol:[10,2000],verify_ok:[0.3,1],verify_low:[0,0.9]};
+const TANK_CAP=500, RUN_MS=9000;
+const STAGES=['flowering','fruit_set','enlargement','maturity','dormant'];
+const STAGE_IC={flowering:I.flower,fruit_set:I.cluster,enlargement:I.fruitsm,maturity:I.citrus,dormant:I.moon};
+const STAGE_SENS={flowering:0.9,fruit_set:0.7,enlargement:0.5,maturity:0.35,dormant:0.1};
+const SCEN=[['NORMAL',I.sun],['DRY_SOIL',I.dropoff],['HIGH_TEMP',I.flame],['LOW_RH',I.wind],['RAIN_AFTER',I.rain],['EXCESS',I.waves],['SENSOR_FAULT',I.wrench],['MISSING',I.help],['SUDDEN',I.zap]];
+const FAULTS=[['none',I.tick],['stuck',I.pin],['drift',I.trendup],['spike',I.zap],['dropout',I.dashed],['offline',I.wifioff]];
+const CLASSES=['healthy_looking','yellowing_like','lesion_spot_like','pest_damage_like','fruit_blemish_like','unknown'];
+const ABN=['yellowing_like','lesion_spot_like','pest_damage_like','fruit_blemish_like'];
+const CLS_IC={healthy_looking:I.leaf,yellowing_like:I.half,lesion_spot_like:I.spots,pest_damage_like:I.bug,fruit_blemish_like:I.citrus,unknown:I.help};
+const CAT_IC={LOW:I.check,MODERATE:I.alert,HIGH:I.alertc,CRITICAL:I.octagon};
+const CAT_COL_L={LOW:'#2c8a55',MODERATE:'#c99a00',HIGH:'#d9661f',CRITICAL:'#c8372d'},CAT_COL_D={LOW:'#4cc184',MODERATE:'#e6b422',HIGH:'#ff8a3d',CRITICAL:'#ff6b5f'};
+const CAT_COL=new Proxy({},{get:(o,k)=>(document.documentElement.getAttribute('data-theme')==='dark'?CAT_COL_D:CAT_COL_L)[k]});
+const ROLE_IC={farmer:I.sprout,worker:I.wrench,agronomist:I.flask,admin:I.shield,demo:I.play,pending:I.hourglass};
+const REC_IC={R01:I.drop,R02:I.waves,R03:I.flame,R04:I.camera,R05:I.leaf,R06:I.wrench,R07:I.flask,R08:I.rain,MAN:I.drop};
+const OPEN_STATES=['ALERTED','DEFERRED','APPROVED','EXECUTED'];
+const NAV=[['home',I.home],['dash',I.map],['recs',I.bulb],['irrig',I.drop],['photos',I.camera],['obs',I.citrus],['monitor',I.chart],['orchard',I.tree],['reviews',I.scan],['reports',I.folder]];
+const ACCESS={home:'*',dash:'*',recs:'*',irrig:'*',photos:['farmer','worker','agronomist','demo'],obs:['farmer','worker','agronomist','demo'],monitor:'*',orchard:['farmer','agronomist','admin','demo'],reviews:['agronomist','demo'],reports:['farmer','agronomist','admin','demo']};
+const PERM={run_sim:['farmer','agronomist','admin','demo'],edit_orchard:['farmer','admin','demo'],decide:['farmer','demo'],decide_expert:['agronomist','demo'],execute:['farmer','worker','demo'],manual:['farmer','demo'],upload:['farmer','worker','agronomist','demo'],observe:['farmer','worker','agronomist','demo'],lab:['farmer','agronomist','demo'],review:['agronomist','demo'],thresholds:['agronomist','admin','demo'],users:['admin'],export:['farmer','agronomist','admin','demo'],estop_release:['farmer','admin','demo'],tank:['farmer','admin','demo'],reset:['admin','demo']};
+const DEMO_USERS=[
+ {id:'u1',name:'Ramesh (Farmer)',identifier:'farmer@bahar.demo',pw:'farmer123',role:'farmer'},
+ {id:'u2',name:'Sunita (Worker)',identifier:'worker@bahar.demo',pw:'worker123',role:'worker'},
+ {id:'u3',name:'Dr. Deshmukh (Agronomist)',identifier:'agro@bahar.demo',pw:'agro123',role:'agronomist'},
+ {id:'u4',name:'Admin',identifier:'admin@bahar.demo',pw:'admin123',role:'admin'},
+ {id:'u5',name:'Demo Guest',identifier:'demo@bahar.demo',pw:'demo123',role:'demo'}];
+
+/* ---------------------------- i18n ---------------------------- */
+const L={en:{
+home:'Home',dash:'Zones',recs:'Actions',irrig:'Water',photos:'Photos',obs:'Fruit & Lab',monitor:'Weather',orchard:'Orchard',reviews:'Review',reports:'Reports',
+tagline:'See the orchard · Decide · Act · Check it worked',signin:'Sign in',register:'Create account',identifier:'Email or phone',password:'Password',confirm_pw:'Repeat password',name:'Name',
+demo_logins:'Tap a demo user to enter',logout:'Logout',sim_data:'SIMULATED',online:'Online',offline:'Offline',pending:'to sync',synced:'Synced',
+save:'Save',cancel:'Cancel',back:'Back',all:'All',open:'Open',done:'Done',zone:'Zone',stage:'Stage',risk:'Fruit-drop risk',uncertainty:'Uncertainty',range:'Score range',why:'Why?',
+factors:'What is driving the score',completeness:'Data available',LOW:'Low',MODERATE:'Moderate',HIGH:'High',CRITICAL:'Critical',MEDIUM:'Medium',
+soil:'Soil moisture',depletion:'Root-zone dryness',stress:'Stress index',drop:'Fruit drop',flagged:'Photos to check',top_action:'Do this first',all_clear:'All clear — nothing urgent',hello:'Namaste',
+generate:'Generate readings',scenario:'Situation',seed:'Seed',days:'Days',fault:'Add sensor fault',none:'None',quality:'Quality',
+approve:'Approve',defer:'Later',reject:'Reject',reason:'Reason',run:'Start watering',stop:'STOP',release:'Release stop',tank:'Water tank',safety:'Safety checks',plan:'Plan',
+verification:'Did it work?',VERIFIED:'Worked',NOT_VERIFIED:'Did not work',INCONCLUSIVE:'Unclear',feedback:'Rate this advice',send:'Send',
+upload:'Take or choose a photo',demo_imgs:'Or try a sample photo',symptoms:'What do you see? (optional)',result:'Result',confidence:'Confidence',
+visual_note:'Visual indication only — not a diagnosis.',expert_req:'Sent to expert',retake:'Please retake the photo',
+healthy_looking:'Looks healthy',yellowing_like:'Yellowing',lesion_spot_like:'Spots',pest_damage_like:'Pest damage',fruit_blemish_like:'Fruit blemish',unknown:'Unknown',
+leaf:'Leaf',fruit:'Fruit',canopy:'Tree',tagged:'Tagged fruit',fallen:'Fallen fruit',from:'From',to:'To',lab:'Lab report',
+no_dose:'Values are stored as typed. The app never gives a fertiliser or pesticide dose.',history:'History',
+export:'Export',thresholds:'Settings',users:'Users',log:'Activity',role:'Role',change_class:'Change label',confirm:'Confirm',req_photos:'Ask for new photos',queue_empty:'Nothing to review',
+flowering:'Flowering',fruit_set:'Fruit set',enlargement:'Fruit growing',maturity:'Ripening',dormant:'Resting',
+r_R01:'Water zone {z}',r_R02:'Too wet — pause water in {z}',r_R03:'Heat stress in {z}',r_R04:'Expert: check photos of {z}',r_R05:'Count fallen fruit in {z}',r_R06:'Check sensor in {z}',r_R07:'Expert: read lab report of {z}',r_R08:'Wait — rain expected in {z}',r_MAN:'Manual watering {z}',
+d_R02:'Pause irrigation and check drainage.',d_R03:'Inspect canopy; water early morning; check mulch.',d_R04:'Some photos are uncertain. An agronomist will look.',d_R05:'Count fallen fruit on tagged trees.',d_R06:'This sensor is giving bad data. Its readings are not used.',d_R07:'An agronomist should read the lab values.',d_R08:'Hold watering. Re-check after the rain.',
+v_soil:'Check: soil moisture rises after watering',v_expert:'Check: expert decision recorded',v_recount:'Check: new count entered',v_drain:'Check: soil dries back to normal',v_sensor:'Check: sensor readings back to OK',v_esi:'Check: stress index falls',
+p1:'within 24 h',p2:'within 48 h',p3:'within 7 days',
+ALERTED:'New',APPROVED:'Approved',DEFERRED:'Later',REJECTED:'Rejected',EXECUTED:'Done – checking',FAILED_SAFETY:'Blocked by safety',CANCELLED:'Cancelled (re-check)',
+READY:'Ready',RUNNING:'Running',DONE:'Finished',FAILED:'Blocked',ABORTED:'Stopped',
+c_tank:'Enough water in tank',c_dur:'Duration within zone limit',c_vol:'Volume within limit',c_rain:'No rain expected',c_sensors:'Sensors agree',c_estop:'Emergency stop not active',
+manual:'Water by hand (manual)',check_run:'Check safety & create',no_access:'Your account is waiting. Ask the orchard owner or admin to give you a role.',
+session_expired:'Session expired. Please sign in again.',bad_login:'Identifier or password is incorrect',locked:'Too many tries. Wait {s} s.',
+add_zone:'Add zone',reset:'Reset demo data',mark_done:'Mark done',reopen:'Reopen',go_water:'Go to Water',
+ev_dep:'Dryness',ev_esi:'Stress',ev_drop:'Fruit drop',ev_risk:'Risk',ev_vwc:'Soil',ev_rain:'Rain expected',ev_photo:'Uncertain photos',ev_fault:'Bad readings',ev_lab:'Lab report',ev_wet:'Above field capacity',
+sc_NORMAL:'Normal',sc_DRY_SOIL:'Dry soil',sc_HIGH_TEMP:'Very hot',sc_LOW_RH:'Dry air',sc_RAIN_AFTER:'Rain coming',sc_EXCESS:'Too wet',sc_SENSOR_FAULT:'Sensor stuck',sc_MISSING:'Missing data',sc_SUDDEN:'Sudden spike',
+f_none:'None',f_stuck:'Stuck',f_drift:'Drift',f_spike:'Spike',f_dropout:'Dropout',f_offline:'Offline',
+f_esi:'Heat & dryness stress',f_irr:'Irregular watering',f_img:'Photo signs',f_drop:'Recent fruit drop',f_stage:'Crop stage sensitivity',
+q_reason:'Why later / reject?',rs1:'Already done',rs2:'No labour today',rs3:'Disagree',rs4:'Will check first',
+ex_csv_risk:'Risk history',ex_csv_recs:'Actions',ex_csv_int:'Watering',ex_json:'Full backup',restore:'Restore backup',
+ready_items:'Ready to water',no_ready:'Nothing approved to water. Approve a watering action first.',
+expected:'Expected rise',observed:'Observed rise',ratio:'Response',sim_time:'simulated time',
+pending_role:'Waiting',farmer:'Farmer',worker:'Worker',agronomist:'Agronomist',admin:'Admin',demo:'Demonstrator',
+orchard_info:'Orchard',zones_list:'Zones',soil_setup:'Soil & irrigation of',import_trees:'Import trees (CSV)',
+updated:'Updated',no_readings:'No readings yet. Open Weather and generate readings.',recount_note:'Follow-up fruit count suggested in 7 days',
+expert_items:'For expert',estop_on:'Emergency stop is ON. Watering is blocked until released.',
+saved:'Saved',need_both:'Enter your email or phone, and your password.',no_account:'No account found with this email or phone. Check it, or use a demo account below.',bad_pw:'Incorrect password. {n} tries left before a 30-second pause.',need_name:'Please enter your name.',bad_id:'Enter a valid email, or a 10-digit phone number.',pw_short:'At least 6 characters',pw_differ:'The two passwords do not match.',id_taken:'An account with this email or phone already exists. Sign in instead.',role_hint:'Agronomist and admin access is given by the orchard admin.',store_note:'This browser view cannot keep saved data, so sign-in and changes last only until the page is closed. For full use, download the file and open it in Chrome or Edge.',confirm_restore:'Replace all current data with this backup?',confirm_reset:'Reset all demo data? Your changes will be removed.',reset_pw:'Reset password',new_pw:'New password',last_login:'Last sign-in',unlock:'Unlock',sy_holes:'Holes',sy_curl:'Leaf curl',sy_blur:'Blurry',dark_mode:'Dark mode',light_mode:'Light mode',
+offline_note:'You are offline. Everything you save is kept on this device and sent when you are back online.',
+},
+hi:{home:'होम',dash:'ज़ोन',recs:'काम',irrig:'पानी',photos:'फ़ोटो',obs:'फल व लैब',monitor:'मौसम',orchard:'बाग़',reviews:'जाँच',reports:'रिपोर्ट',
+tagline:'बाग़ देखें · निर्णय लें · काम करें · असर जाँचें',signin:'साइन इन',register:'खाता बनाएँ',identifier:'ईमेल या फ़ोन',password:'पासवर्ड',confirm_pw:'पासवर्ड दोबारा',name:'नाम',
+demo_logins:'डेमो उपयोगकर्ता चुनें',logout:'लॉगआउट',sim_data:'सिम्युलेटेड',online:'ऑनलाइन',offline:'ऑफ़लाइन',pending:'भेजना बाकी',synced:'सिंक',
+save:'सहेजें',cancel:'रद्द',back:'वापस',all:'सभी',open:'खुले',done:'पूरे',zone:'ज़ोन',stage:'अवस्था',risk:'फल गिरने का जोखिम',uncertainty:'अनिश्चितता',range:'स्कोर सीमा',why:'क्यों?',
+factors:'स्कोर किस वजह से',completeness:'उपलब्ध डेटा',LOW:'कम',MODERATE:'मध्यम',HIGH:'उच्च',CRITICAL:'गंभीर',MEDIUM:'मध्यम',
+soil:'मिट्टी की नमी',depletion:'जड़ क्षेत्र सूखापन',stress:'तनाव सूचकांक',drop:'फल गिरना',flagged:'जाँच हेतु फ़ोटो',top_action:'पहले यह करें',all_clear:'सब ठीक — अभी कुछ ज़रूरी नहीं',hello:'नमस्ते',
+generate:'रीडिंग बनाएँ',scenario:'स्थिति',seed:'सीड',days:'दिन',fault:'सेंसर दोष जोड़ें',none:'कोई नहीं',quality:'गुणवत्ता',
+approve:'मंज़ूर',defer:'बाद में',reject:'अस्वीकार',reason:'कारण',run:'पानी शुरू करें',stop:'रोकें',release:'रोक हटाएँ',tank:'पानी की टंकी',safety:'सुरक्षा जाँच',plan:'योजना',
+verification:'क्या असर हुआ?',VERIFIED:'असर हुआ',NOT_VERIFIED:'असर नहीं',INCONCLUSIVE:'अस्पष्ट',feedback:'सलाह को रेटिंग दें',send:'भेजें',
+upload:'फ़ोटो लें या चुनें',demo_imgs:'या नमूना फ़ोटो आज़माएँ',symptoms:'क्या दिख रहा है? (वैकल्पिक)',result:'परिणाम',confidence:'विश्वास',
+visual_note:'केवल दृश्य संकेत — निदान नहीं।',expert_req:'विशेषज्ञ को भेजा',retake:'कृपया फ़ोटो दोबारा लें',
+healthy_looking:'स्वस्थ दिखता है',yellowing_like:'पीलापन',lesion_spot_like:'धब्बे',pest_damage_like:'कीट क्षति',fruit_blemish_like:'फल पर दाग',unknown:'अज्ञात',
+leaf:'पत्ता',fruit:'फल',canopy:'पेड़',tagged:'चिह्नित फल',fallen:'गिरे फल',from:'से',to:'तक',lab:'लैब रिपोर्ट',
+no_dose:'मान जैसे लिखे वैसे सहेजे जाते हैं। ऐप कभी खाद या कीटनाशक की मात्रा नहीं बताता।',history:'इतिहास',
+export:'निर्यात',thresholds:'सेटिंग',users:'उपयोगकर्ता',log:'गतिविधि',role:'भूमिका',change_class:'लेबल बदलें',confirm:'पुष्टि',req_photos:'नई फ़ोटो माँगें',queue_empty:'जाँच हेतु कुछ नहीं',
+flowering:'फूल',fruit_set:'फल बनना',enlargement:'फल बढ़ना',maturity:'पकना',dormant:'विश्राम',
+r_R01:'ज़ोन {z} में पानी दें',r_R02:'{z} बहुत गीला — पानी रोकें',r_R03:'{z} में गर्मी का तनाव',r_R04:'विशेषज्ञ: {z} की फ़ोटो देखें',r_R05:'{z} में गिरे फल गिनें',r_R06:'{z} का सेंसर जाँचें',r_R07:'विशेषज्ञ: {z} की लैब रिपोर्ट',r_R08:'रुकें — {z} में बारिश संभव',r_MAN:'हाथ से पानी {z}',
+p1:'24 घंटे में',p2:'48 घंटे में',p3:'7 दिन में',
+ALERTED:'नया',APPROVED:'मंज़ूर',DEFERRED:'बाद में',REJECTED:'अस्वीकार',EXECUTED:'किया – जाँच',FAILED_SAFETY:'सुरक्षा से रुका',CANCELLED:'रद्द (पुनः जाँच)',
+READY:'तैयार',RUNNING:'चल रहा',DONE:'पूरा',FAILED:'रुका',ABORTED:'रोका गया',
+c_tank:'टंकी में पर्याप्त पानी',c_dur:'समय सीमा में',c_vol:'मात्रा सीमा में',c_rain:'बारिश की संभावना नहीं',c_sensors:'सेंसर सहमत',c_estop:'आपात रोक बंद',
+manual:'हाथ से पानी (मैनुअल)',check_run:'सुरक्षा जाँचें व बनाएँ',no_access:'आपका खाता प्रतीक्षा में है। बाग़ मालिक या एडमिन से भूमिका माँगें।',
+session_expired:'सत्र समाप्त। फिर से साइन इन करें।',bad_login:'पहचान या पासवर्ड गलत है',locked:'बहुत प्रयास। {s} से. रुकें।',
+add_zone:'ज़ोन जोड़ें',reset:'डेमो डेटा रीसेट',mark_done:'पूरा हुआ',reopen:'फिर खोलें',go_water:'पानी पर जाएँ',
+sc_NORMAL:'सामान्य',sc_DRY_SOIL:'सूखी मिट्टी',sc_HIGH_TEMP:'बहुत गर्म',sc_LOW_RH:'शुष्क हवा',sc_RAIN_AFTER:'बारिश आने वाली',sc_EXCESS:'बहुत गीला',sc_SENSOR_FAULT:'सेंसर अटका',sc_MISSING:'डेटा गायब',sc_SUDDEN:'अचानक उछाल',
+f_esi:'गर्मी व सूखा तनाव',f_irr:'अनियमित सिंचाई',f_img:'फ़ोटो संकेत',f_drop:'हाल में फल गिरना',f_stage:'फसल अवस्था',
+ready_items:'पानी देने को तैयार',no_ready:'कोई मंज़ूर सिंचाई नहीं। पहले काम मंज़ूर करें।',expected:'अपेक्षित वृद्धि',observed:'देखी गई वृद्धि',ratio:'प्रतिक्रिया',
+farmer:'किसान',worker:'कर्मचारी',agronomist:'कृषि विशेषज्ञ',admin:'एडमिन',demo:'डेमो',orchard_info:'बाग़',zones_list:'ज़ोन',
+no_readings:'अभी रीडिंग नहीं। मौसम खोलकर रीडिंग बनाएँ।',expert_items:'विशेषज्ञ हेतु',estop_on:'आपात रोक चालू है। हटाने तक सिंचाई बंद।',
+saved:'सहेजा गया',need_both:'ईमेल या फ़ोन, और पासवर्ड दर्ज करें।',no_account:'इस ईमेल या फ़ोन से कोई खाता नहीं मिला। जाँचें, या नीचे डेमो खाता चुनें।',bad_pw:'पासवर्ड गलत है। 30 सेकंड रुकने से पहले {n} प्रयास बचे।',need_name:'कृपया अपना नाम लिखें।',bad_id:'सही ईमेल या 10 अंकों का फ़ोन नंबर लिखें।',pw_short:'कम से कम 6 अक्षर',pw_differ:'दोनों पासवर्ड मेल नहीं खाते।',id_taken:'इस ईमेल या फ़ोन से खाता पहले से है। साइन इन करें।',role_hint:'कृषि विशेषज्ञ व एडमिन पहुँच बाग़ एडमिन देते हैं।',store_note:'यह ब्राउज़र दृश्य डेटा सहेज नहीं सकता, इसलिए साइन इन और बदलाव पेज बंद होने तक ही रहेंगे। पूर्ण उपयोग के लिए फ़ाइल डाउनलोड कर Chrome या Edge में खोलें।',confirm_restore:'सारा मौजूदा डेटा इस बैकअप से बदलें?',confirm_reset:'सारा डेमो डेटा रीसेट करें? आपके बदलाव हट जाएँगे।',reset_pw:'पासवर्ड रीसेट',new_pw:'नया पासवर्ड',last_login:'अंतिम साइन इन',unlock:'अनलॉक',sy_holes:'छेद',sy_curl:'पत्ता मुड़ना',sy_blur:'धुंधला',dark_mode:'डार्क मोड',light_mode:'लाइट मोड',offline_note:'आप ऑफ़लाइन हैं। सहेजा गया सब इस डिवाइस पर रहेगा और ऑनलाइन होने पर भेजा जाएगा।',updated:'अद्यतन'},
+mr:{home:'मुख्य',dash:'झोन',recs:'कामे',irrig:'पाणी',photos:'फोटो',obs:'फळ व लॅब',monitor:'हवामान',orchard:'बाग',reviews:'तपासणी',reports:'अहवाल',
+tagline:'बाग पाहा · निर्णय घ्या · काम करा · परिणाम तपासा',signin:'साइन इन',register:'खाते तयार करा',identifier:'ईमेल किंवा फोन',password:'पासवर्ड',confirm_pw:'पासवर्ड पुन्हा',name:'नाव',
+demo_logins:'डेमो वापरकर्ता निवडा',logout:'लॉगआउट',sim_data:'सिम्युलेटेड',online:'ऑनलाइन',offline:'ऑफलाइन',pending:'पाठवणे बाकी',synced:'सिंक',
+save:'जतन करा',cancel:'रद्द',back:'मागे',all:'सर्व',open:'उघडी',done:'पूर्ण',zone:'झोन',stage:'अवस्था',risk:'फळगळ धोका',uncertainty:'अनिश्चितता',range:'गुण श्रेणी',why:'का?',
+factors:'गुण कशामुळे',completeness:'उपलब्ध माहिती',LOW:'कमी',MODERATE:'मध्यम',HIGH:'जास्त',CRITICAL:'गंभीर',MEDIUM:'मध्यम',
+soil:'मातीतील ओलावा',depletion:'मुळांजवळ कोरडेपणा',stress:'ताण निर्देशांक',drop:'फळगळ',flagged:'तपासायचे फोटो',top_action:'आधी हे करा',all_clear:'सर्व ठीक — आता काही तातडीचे नाही',hello:'नमस्कार',
+generate:'रीडिंग तयार करा',scenario:'परिस्थिती',seed:'सीड',days:'दिवस',fault:'सेन्सर दोष जोडा',none:'काही नाही',quality:'गुणवत्ता',
+approve:'मंजूर',defer:'नंतर',reject:'नाकार',reason:'कारण',run:'पाणी सुरू करा',stop:'थांबवा',release:'थांबा काढा',tank:'पाण्याची टाकी',safety:'सुरक्षा तपासणी',plan:'योजना',
+verification:'परिणाम झाला का?',VERIFIED:'परिणाम झाला',NOT_VERIFIED:'परिणाम नाही',INCONCLUSIVE:'अस्पष्ट',feedback:'सल्ल्याला गुण द्या',send:'पाठवा',
+upload:'फोटो काढा किंवा निवडा',demo_imgs:'किंवा नमुना फोटो वापरा',symptoms:'काय दिसते? (ऐच्छिक)',result:'निकाल',confidence:'विश्वास',
+visual_note:'फक्त दृश्य संकेत — निदान नाही.',expert_req:'तज्ज्ञाकडे पाठवले',retake:'कृपया फोटो पुन्हा काढा',
+healthy_looking:'निरोगी दिसते',yellowing_like:'पिवळेपणा',lesion_spot_like:'ठिपके',pest_damage_like:'कीड नुकसान',fruit_blemish_like:'फळावर डाग',unknown:'अज्ञात',
+leaf:'पान',fruit:'फळ',canopy:'झाड',tagged:'खूण केलेली फळे',fallen:'गळलेली फळे',from:'पासून',to:'पर्यंत',lab:'लॅब अहवाल',
+no_dose:'मूल्ये लिहिल्याप्रमाणे जतन होतात. ॲप कधीही खत किंवा कीटकनाशकाची मात्रा सांगत नाही.',history:'इतिहास',
+export:'निर्यात',thresholds:'सेटिंग्ज',users:'वापरकर्ते',log:'नोंदी',role:'भूमिका',change_class:'लेबल बदला',confirm:'खात्री',req_photos:'नवीन फोटो मागा',queue_empty:'तपासण्यास काही नाही',
+flowering:'फुलोरा',fruit_set:'फळधारणा',enlargement:'फळवाढ',maturity:'पिकणे',dormant:'विश्रांती',
+r_R01:'झोन {z} ला पाणी द्या',r_R02:'{z} जास्त ओला — पाणी थांबवा',r_R03:'{z} मध्ये उष्णतेचा ताण',r_R04:'तज्ज्ञ: {z} चे फोटो तपासा',r_R05:'{z} मधील गळलेली फळे मोजा',r_R06:'{z} चा सेन्सर तपासा',r_R07:'तज्ज्ञ: {z} चा लॅब अहवाल',r_R08:'थांबा — {z} मध्ये पाऊस अपेक्षित',r_MAN:'हाताने पाणी {z}',
+p1:'24 तासांत',p2:'48 तासांत',p3:'7 दिवसांत',
+ALERTED:'नवीन',APPROVED:'मंजूर',DEFERRED:'नंतर',REJECTED:'नाकारले',EXECUTED:'केले – तपासणी',FAILED_SAFETY:'सुरक्षेमुळे थांबले',CANCELLED:'रद्द (पुन्हा तपासणी)',
+READY:'तयार',RUNNING:'सुरू',DONE:'पूर्ण',FAILED:'थांबले',ABORTED:'थांबवले',
+c_tank:'टाकीत पुरेसे पाणी',c_dur:'वेळ मर्यादेत',c_vol:'प्रमाण मर्यादेत',c_rain:'पावसाची शक्यता नाही',c_sensors:'सेन्सर सहमत',c_estop:'आपत्कालीन थांबा बंद',
+manual:'हाताने पाणी (मॅन्युअल)',check_run:'सुरक्षा तपासा व तयार करा',no_access:'तुमचे खाते प्रतीक्षेत आहे. बाग मालक किंवा ॲडमिनकडून भूमिका मागा.',
+session_expired:'सत्र संपले. पुन्हा साइन इन करा.',bad_login:'ओळख किंवा पासवर्ड चुकीचा',locked:'खूप प्रयत्न. {s} से. थांबा.',
+add_zone:'झोन जोडा',reset:'डेमो डेटा रीसेट',mark_done:'पूर्ण झाले',reopen:'पुन्हा उघडा',go_water:'पाण्यावर जा',
+sc_NORMAL:'सामान्य',sc_DRY_SOIL:'कोरडी माती',sc_HIGH_TEMP:'खूप उष्ण',sc_LOW_RH:'कोरडी हवा',sc_RAIN_AFTER:'पाऊस येणार',sc_EXCESS:'जास्त ओले',sc_SENSOR_FAULT:'सेन्सर अडकला',sc_MISSING:'माहिती गहाळ',sc_SUDDEN:'अचानक उसळी',
+f_esi:'उष्णता व कोरडेपणा ताण',f_irr:'अनियमित पाणी',f_img:'फोटो संकेत',f_drop:'अलीकडील फळगळ',f_stage:'पीक अवस्था',
+ready_items:'पाणी देण्यास तयार',no_ready:'मंजूर सिंचन नाही. आधी काम मंजूर करा.',expected:'अपेक्षित वाढ',observed:'दिसलेली वाढ',ratio:'प्रतिसाद',
+farmer:'शेतकरी',worker:'कामगार',agronomist:'कृषी तज्ज्ञ',admin:'ॲडमिन',demo:'डेमो',orchard_info:'बाग',zones_list:'झोन',
+no_readings:'अजून रीडिंग नाही. हवामान उघडून रीडिंग तयार करा.',expert_items:'तज्ज्ञासाठी',estop_on:'आपत्कालीन थांबा सुरू आहे. काढेपर्यंत सिंचन बंद.',
+saved:'जतन झाले',need_both:'ईमेल किंवा फोन, आणि पासवर्ड लिहा.',no_account:'या ईमेल किंवा फोनने खाते सापडले नाही. तपासा, किंवा खालील डेमो खाते वापरा.',bad_pw:'पासवर्ड चुकीचा. 30 सेकंद थांबण्यापूर्वी {n} प्रयत्न उरले.',need_name:'कृपया तुमचे नाव लिहा.',bad_id:'योग्य ईमेल किंवा 10 अंकी फोन नंबर लिहा.',pw_short:'किमान 6 अक्षरे',pw_differ:'दोन्ही पासवर्ड जुळत नाहीत.',id_taken:'या ईमेल किंवा फोनने खाते आधीच आहे. साइन इन करा.',role_hint:'कृषी तज्ज्ञ व ॲडमिन प्रवेश बाग ॲडमिन देतात.',store_note:'हे ब्राउझर दृश्य माहिती जतन करू शकत नाही, त्यामुळे साइन इन आणि बदल पान बंद होईपर्यंतच राहतील. पूर्ण वापरासाठी फाइल डाउनलोड करून Chrome किंवा Edge मध्ये उघडा.',confirm_restore:'सर्व सध्याची माहिती या बॅकअपने बदलायची?',confirm_reset:'सर्व डेमो माहिती रीसेट करायची? तुमचे बदल काढले जातील.',reset_pw:'पासवर्ड रीसेट',new_pw:'नवीन पासवर्ड',last_login:'शेवटचे साइन इन',unlock:'अनलॉक',sy_holes:'छिद्रे',sy_curl:'पान वळणे',sy_blur:'अस्पष्ट',dark_mode:'डार्क मोड',light_mode:'लाइट मोड',offline_note:'तुम्ही ऑफलाइन आहात. जतन केलेले सर्व या डिव्हाइसवर राहील आणि ऑनलाइन झाल्यावर पाठवले जाईल.',updated:'अद्यतन'}};
+let lang=store.get(LKEY)||'en'; if(!L[lang]) lang='en';
+function t(k,p){let s=(L[lang]&&L[lang][k])||L.en[k]||k;if(p)for(const x in p)s=s.split('{'+x+'}').join(p[x]);return s}
+
+/* ---------------------------- state ---------------------------- */
+let S=null;
+function mkZone(id,idx,trees,stage,area){return {id,idx,trees,stage,stageHist:[{stage,at:Date.now(),by:'system'}],fc:0.30,wp:0.14,root:0.6,p:0.5,ea:0.85,maxH:6,area_ha:area,flow:40,fw:0.5,readings:[],run:null,forecastRain:false,drops:[],photos:[],labs:[],a:null,risk:null}}
+function seedState(){
+ const st={v:1,users:DEMO_USERS.map(u=>mkUser(u.name,u.identifier,u.pw,u.role,u.id)),
+  orchard:{name:'Demo Orchard 001',area:2.4,trees:400,soil:'black',irrigation:'drip'},
+  zones:[mkZone('Z1',1,140,'fruit_set',0.84),mkZone('Z2',2,120,'enlargement',0.72),mkZone('Z3',3,140,'fruit_set',0.84)],
+  recs:[],ints:[],events:[],queue:[],synced:[],riskHist:[],trees:[],
+  thr:{version:1,vals:{...DEF},hist:[{version:1,vals:{...DEF},at:Date.now(),by:'system'}]},
+  tank:420,estop:false,offline:false,seq:{rec:0,int:0,img:0,lab:0,drop:0}};
+ S=st;
+ simulate(st.zones[0],'NORMAL',11,7,'none');
+ simulate(st.zones[1],'DRY_SOIL',42,7,'none');
+ simulate(st.zones[2],'LOW_RH',7,7,'none');
+ const now=Date.now();
+ addDrop(st.zones[0],{tagged:400,fallen:8,from:now-7*864e5,to:now-60e5},'system',true);
+ addDrop(st.zones[1],{tagged:400,fallen:26,from:now-14*864e5,to:now-7*864e5},'system',true);
+ addDrop(st.zones[1],{tagged:400,fallen:48,from:now-7*864e5,to:now-60e5},'system',true);
+ addDrop(st.zones[2],{tagged:400,fallen:12,from:now-7*864e5,to:now-60e5},'system',true);
+ logE('system','ORCHARD','Demo Orchard 001','','CREATED','seed data');
+ reevaluate();
+ return st;
+}
+function save(){if(!store.set(KEY,JSON.stringify(S))){
+ // storage full: shrink stored photo images, keep records
+ S.zones.forEach(z=>z.photos.slice(8).forEach(p=>p.img=null));
+ if(!store.set(KEY,JSON.stringify(S))) toast('Device storage full');}}
+const Z=id=>S.zones.find(z=>z.id===id);
+const isOffline=()=>S.offline||(typeof navigator!=='undefined'&&navigator.onLine===false);
+function logE(by,entity,id,from,to,note){S.events.push({at:Date.now(),by,entity,id,from,to,note:note||''});if(S.events.length>600)S.events.splice(0,S.events.length-600)}
+function persist(obj,kind){obj.client_uuid=obj.client_uuid||uuid();if(isOffline()){obj.pending=true;S.queue.push({uuid:obj.client_uuid,kind,at:Date.now()})}}
+function syncNow(){if(isOffline()||!S.queue.length)return;let n=0,dup=0;
+ S.queue.forEach(q=>{if(S.synced.includes(q.uuid))dup++;else{S.synced.push(q.uuid);n++}});
+ const clr=o=>{if(o&&o.pending)o.pending=false};
+ S.zones.forEach(z=>{z.drops.forEach(clr);z.photos.forEach(clr);z.labs.forEach(clr)});S.recs.forEach(clr);S.ints.forEach(clr);
+ S.queue=[];if(S.synced.length>800)S.synced=S.synced.slice(-800);
+ logE('system','SYNC','queue','',`SYNCED ${n}`,dup?`${dup} duplicates ignored`:'');save();toast(`${I.cloud} ${t('synced')}: ${n}`)}
+
+/* ---------------------------- simulator (seeded) ---------------------------- */
+function simulate(z,sc,seed,days,fault){
+ const r=rng((seed|0)*7919+z.idx*104729+17);
+ const n=days*24, end=Math.floor(Date.now()/36e5)*36e5, start=end-(n-1)*36e5;
+ let v={DRY_SOIL:0.27,EXCESS:0.31,RAIN_AFTER:0.255,HIGH_TEMP:0.27,LOW_RH:0.27}[sc]??0.285;
+ const fs=Math.max(0,n-18); let stuck=null;
+ const flt=sc==='SENSOR_FAULT'?'stuck':sc==='SUDDEN'?'spike':fault;
+ const out=[];
+ for(let h=0;h<n;h++){
+  const ts=start+h*36e5, hod=new Date(ts).getHours(), dayi=Math.floor(h/24);
+  const di=Math.sin((hod-9)/24*2*Math.PI);
+  let tm=30,amp=6.5,rhb=60;
+  if(sc==='HIGH_TEMP'){tm=37.5;amp=7;rhb=40} if(sc==='LOW_RH'){tm=32;rhb=32} if(sc==='EXCESS'){tm=27;rhb=78}
+  const temp=tm+amp*di+(r()-.5)*1.4;
+  const rh=clamp(rhb-16*di+(r()-.5)*6,6,98);
+  const light=hod>=6&&hod<=18?Math.round(1000*Math.sin(Math.PI*(hod-6)/12)*(.8+.2*r())):0;
+  let rain=0;
+  if(sc==='NORMAL'&&r()<0.012) rain=2+r()*6;
+  if(sc==='EXCESS'&&r()<0.09) rain=4+r()*12;
+  let irr=0;
+  if(['NORMAL','MISSING','SENSOR_FAULT','SUDDEN'].includes(sc)&&hod===6&&dayi%3===1) irr=16;
+  if(['HIGH_TEMP','LOW_RH'].includes(sc)&&hod===6&&dayi%4===2) irr=12;
+  if(sc==='EXCESS'&&hod===6&&dayi%2===0) irr=14;
+  const etf={HIGH_TEMP:1.35,LOW_RH:1.25,DRY_SOIL:1.1,RAIN_AFTER:1.1,EXCESS:0.7}[sc]||1;
+  const et=Math.max(0,temp-10)*0.011*(light>0?1.55:0.2)*etf;
+  v+=(rain+irr-et)/(z.root*1000);
+  if(v>z.fc) v-=(v-z.fc)*(sc==='EXCESS'?0.012:0.1);
+  v=clamp(v,z.wp*0.85,0.47);
+  const soilT=26+(temp-26)*0.45+(r()-.5)*.6-(v-0.2)*8;
+  let vw=v+(r()-.5)*0.004, T=temp, RH=rh;
+  if(h>=fs){
+   if(flt==='stuck'){if(stuck==null)stuck=r3(vw);vw=stuck}
+   if(flt==='drift') vw+=(h-fs)*0.0009;
+   if(flt==='spike'&&h===fs) vw+=0.16;
+   if(flt==='dropout'&&r()<0.35) vw=null;
+   if(flt==='offline'&&h<fs+10){vw=null;T=null;RH=null}
+  }
+  if(sc==='MISSING'&&r()<0.18){vw=null;if(r()<.5){T=null;RH=null}}
+  out.push({ts,temp:T==null?null:r1(T),rh:RH==null?null:Math.round(RH),rain:r1(rain),irr,light,vwc:vw==null?null:r3(vw),soilT:r1(soilT),q:'OK'});
+ }
+ flagQuality(out);
+ z.readings=out; z.run={sc,seed,days,fault:flt,at:Date.now()}; z.forecastRain=(sc==='RAIN_AFTER');
+ return out;
+}
+function flagQuality(arr){
+ let prev=null,run=0,last=null;
+ arr.forEach((p,i)=>{
+  p.q='OK';
+  if(p.vwc==null){p.q='MISSING';return}
+  if(p.vwc<0||p.vwc>0.6){p.q='RANGE';return}
+  if(prev!=null&&Math.abs(p.vwc-prev)>0.04&&!(p.rain>0||p.irr>0)) p.q='SPIKE';
+  if(last!=null&&p.vwc===last){run++;if(run>=6){p.q='STUCK';for(let k=1;k<=run&&i-k>=0;k++)if(arr[i-k].q==='OK')arr[i-k].q='STUCK'}}else run=0;
+  last=p.vwc; if(p.q!=='SPIKE') prev=p.vwc;
+ });
+ // drift: rising soil moisture for 12 h with no rain or irrigation
+ for(let i=12;i<arr.length;i++){
+  const a=arr[i-12],b=arr[i];if(a.vwc==null||b.vwc==null)continue;
+  let wet=false;for(let k=i-12;k<=i;k++)if(arr[k].rain>0||arr[k].irr>0){wet=true;break}
+  if(!wet&&b.vwc-a.vwc>0.008&&b.q==='OK') b.q='DRIFT';
+ }
+}
+
+/* ---------------------------- analysis engines ---------------------------- */
+function extraRad(ts){ // Ra (mm/day) for Nagpur, FAO-56 eq. 21
+ const d=new Date(ts),J=Math.floor((d-new Date(d.getFullYear(),0,0))/864e5),phi=21.15*Math.PI/180;
+ const dr=1+0.033*Math.cos(2*Math.PI*J/365),del=0.409*Math.sin(2*Math.PI*J/365-1.39),ws=Math.acos(-Math.tan(phi)*Math.tan(del));
+ return 0.408*(24*60/Math.PI)*0.082*dr*(ws*Math.sin(phi)*Math.sin(del)+Math.cos(phi)*Math.cos(del)*Math.sin(ws));
+}
+function analyse(z){
+ const th=S.thr.vals,R=z.readings;if(!R||!R.length)return null;
+ const end=R[R.length-1].ts,last=R.filter(p=>p.ts>end-24*36e5);
+ const ok=last.filter(p=>p.q==='OK');
+ const temps=last.map(p=>p.temp).filter(x=>x!=null),rhs=last.map(p=>p.rh).filter(x=>x!=null),sts=last.map(p=>p.soilT).filter(x=>x!=null);
+ const Tmax=temps.length?Math.max(...temps):null,Tmin=temps.length?Math.min(...temps):null,Tmean=temps.length?(Tmax+Tmin)/2:null;
+ const RHmin=rhs.length?Math.min(...rhs):null;
+ const Ra=extraRad(end);
+ const ET0=temps.length?0.0023*Ra*(Tmean+17.8)*Math.sqrt(Math.max(0,Tmax-Tmin)):null;
+ const ETc=ET0!=null?ET0*th.Kc:null;
+ const lastOk=[...R].reverse().find(p=>p.q==='OK');
+ const v=lastOk?lastOk.vwc:null;
+ const TAW=1000*(z.fc-z.wp)*z.root,RAW=z.p*TAW;
+ const Dr=v!=null?clamp(1000*(z.fc-v)*z.root,0,TAW):null;
+ const Ks=Dr==null?null:Dr<=RAW?1:(TAW-Dr)/(TAW-RAW);
+ const heat=Tmax!=null?clamp((Tmax-th.T_low)/(th.T_high-th.T_low)):0;
+ const dry=RHmin!=null?clamp((th.RH_low-RHmin)/(th.RH_low-th.RH_crit)):0;
+ const dep=Dr!=null?clamp(Dr/TAW):0;
+ const stx=sts.length?clamp((Math.max(...sts)-30)/8):0;
+ const ESI=0.30*heat+0.25*dry+0.30*dep+0.15*stx;
+ const faults=last.filter(p=>p.q!=='OK').length;
+ const quality=last.length?ok.length/last.length:0;
+ const excess=v!=null&&v>z.fc+0.02;
+ const dmax={};R.forEach(p=>{if(p.q!=='OK'||p.ts<=end-7*864e5)return;const k=Math.floor((end-p.ts)/864e5);const d=1000*(z.fc-p.vwc)*z.root;dmax[k]=Math.max(dmax[k]??-1e9,d)});
+ const dk=Object.values(dmax);const irreg=dk.length?dk.filter(d=>d>RAW).length/dk.length:null;
+ const rain24=last.reduce((s,p)=>s+(p.rain||0),0);
+ return {end,Tmax,Tmin,Tmean,RHmin,Ra:r2(Ra),ET0,ETc,v,TAW,RAW,Dr,Ks,ESI,parts:{heat,dry,dep,stx},faults,quality,excess,irreg,rain24,vRAW:z.fc-RAW/(1000*z.root),lastOkTs:lastOk?lastOk.ts:null};
+}
+function photoStats(z){
+ const cut=Date.now()-14*864e5;const ph=z.photos.filter(p=>p.ts>cut&&p.quality==='OK');
+ const lbl=p=>p.expertCls||p.cls;
+ return {n:ph.length,abn:ph.filter(p=>ABN.includes(lbl(p))).length,pendingReview:z.photos.filter(p=>p.review&&!p.expertCls&&!p.retakeReq).length};
+}
+function risk(z,a){
+ const th=S.thr.vals,ps=photoStats(z),d=z.drops[z.drops.length-1];
+ const f=[
+  {k:'f_esi',v:a?a.ESI:null,w:th.w_esi,src:'PRED'},
+  {k:'f_irr',v:a?a.irreg:null,w:th.w_irr,src:'SIM'},
+  {k:'f_img',v:ps.n?ps.abn/ps.n:null,w:th.w_img,src:'IMG'},
+  {k:'f_drop',v:d?clamp(d.rate/th.drop_guard):null,w:th.w_drop,src:'USER'},
+  {k:'f_stage',v:STAGE_SENS[z.stage],w:th.w_stage,src:'USER'}];
+ const tot=f.reduce((s,x)=>s+x.w,0)||1,av=f.filter(x=>x.v!=null),ws=av.reduce((s,x)=>s+x.w,0);
+ let score=ws?100*av.reduce((s,x)=>s+x.w*x.v,0)/ws:0;
+ f.forEach(x=>x.c=x.v==null?0:100*x.w*x.v/(ws||1));
+ const guard=[];
+ if(d&&d.rate>=th.drop_guard&&score<50){score=50;guard.push(`Fruit drop ≥ ${th.drop_guard}% → at least HIGH`)}
+ if(a&&a.Ks!=null&&a.Ks<0.5&&STAGE_SENS[z.stage]>=0.7&&score<25){score=25;guard.push('Water stress in sensitive stage → at least MODERATE')}
+ if(d&&d.rate>=2*th.drop_guard&&a&&a.ESI>0.6&&score<75){score=75;guard.push('Very high drop with high stress → CRITICAL')}
+ const comp=ws/tot,dq=a?a.quality:0;
+ const band=5+(1-comp)*20+(dq<0.8?6:0);
+ const cat=score>=75?'CRITICAL':score>=50?'HIGH':score>=25?'MODERATE':'LOW';
+ return {score:r1(score),cat,band:r1(band),lo:r1(Math.max(0,score-band)),hi:r1(Math.min(100,score+band)),unc:band<=9?'LOW':band<=15?'MEDIUM':'HIGH',comp,dq,factors:f,guard,ver:S.thr.version,at:Date.now()};
+}
+
+/* ---------------------------- recommendation engine ---------------------------- */
+function irrPlan(z,netReq){const th=S.thr.vals;const net=Math.max(1,Math.round(Math.min(netReq,th.max_net)));const gross=net/z.ea;const vol=gross/1000*z.area_ha*1e4*z.fw;return {net,gross:r1(gross),vol:Math.round(vol),hrs:r1(vol/z.flow)}}
+function evaluate(z){
+ const a=analyse(z),rk=risk(z,a),th=S.thr.vals;z.a=a;z.risk=rk;
+ S.riskHist.push({zone:z.id,score:rk.score,cat:rk.cat,ver:rk.ver,at:rk.at});if(S.riskHist.length>400)S.riskHist.splice(0,S.riskHist.length-400);
+ const want={},ps=photoStats(z);
+ const E=(k,val,src)=>({k,val,src});
+ const riskE=E('ev_risk',`${rk.cat} ${rk.score}`,'PRED');
+ if(a&&a.Dr!=null&&a.Dr>a.RAW&&!a.excess){
+  if(z.forecastRain) want.R08={p:3,evidence:[E('ev_dep',`${Math.round(a.Dr)} > ${Math.round(a.RAW)} mm`,'SIM'),E('ev_rain','yes','SIM')],verify:'v_soil'};
+  else want.R01={p:(rk.cat==='HIGH'||rk.cat==='CRITICAL')?1:2,plan:irrPlan(z,a.Dr),evidence:[E('ev_dep',`${Math.round(a.Dr)} mm > RAW ${Math.round(a.RAW)} mm`,'SIM'),E('ev_vwc',`${a.v} m³/m³`,'SIM'),E('ev_esi',r2(a.ESI),'PRED'),...(z.drops.length?[E('ev_drop',z.drops[z.drops.length-1].rate+' %','USER')]:[]),riskE],verify:'v_soil'};
+ }
+ if(a&&a.excess) want.R02={p:2,evidence:[E('ev_wet',`${a.v} > ${z.fc} m³/m³`,'SIM')],verify:'v_drain'};
+ if(a&&a.ESI>=0.6) want.R03={p:2,evidence:[E('ev_esi',r2(a.ESI),'PRED'),E('T max',a.Tmax!=null?r1(a.Tmax)+' °C':'—','SIM'),E('RH min',a.RHmin!=null?a.RHmin+' %':'—','SIM')],verify:'v_esi'};
+ if(ps.pendingReview>0) want.R04={p:2,expert:true,evidence:[E('ev_photo',ps.pendingReview,'IMG')],verify:'v_expert'};
+ const ld=z.drops[z.drops.length-1];
+ if(rk.cat!=='LOW'&&(!ld||Date.now()-ld.at>5*864e5)) want.R05={p:3,evidence:[riskE],verify:'v_recount'};
+ if(a&&a.faults>0) want.R06={p:2,evidence:[E('ev_fault',`${a.faults}/24 h`,'SIM')],verify:'v_sensor'};
+ const unl=z.labs.filter(l=>!l.reviewed).length;
+ if(unl) want.R07={p:3,expert:true,evidence:[E('ev_lab',unl,'LAB')],verify:'v_expert'};
+ // update / create
+ S.recs.filter(r=>r.zone===z.id&&r.rule!=='MAN').forEach(r=>{
+  const w=want[r.rule];
+  if(OPEN_STATES.includes(r.state)){
+   if(w){if(r.state!=='EXECUTED'){r.evidence=w.evidence;r.risk={score:rk.score,cat:rk.cat,unc:rk.unc};if(w.plan&&r.state==='ALERTED')r.plan=w.plan}delete want[r.rule]}
+   else if(r.state==='ALERTED'||r.state==='DEFERRED'){setState(r,'CANCELLED','system','condition cleared on re-check');S.ints.filter(i=>i.rec===r.id&&i.status==='READY').forEach(i=>i.status='ABORTED')}
+   else if(r.state==='EXECUTED'&&r.rule!=='R01'){setState(r,'VERIFIED','system','condition no longer present')}
+   else if(r.state==='APPROVED'&&r.rule==='R01'&&!w){/* keep: farmer approved; safety checks decide */}
+  }
+ });
+ for(const rule in want){const w=want[rule];S.seq.rec++;
+  const rec={id:'REC-'+S.seq.rec,zone:z.id,rule,p:w.p,state:'DETECTED',created:Date.now(),plan:w.plan||null,evidence:w.evidence,expert:!!w.expert,verify:w.verify,risk:{score:rk.score,cat:rk.cat,unc:rk.unc},hist:[],ver:S.thr.version};
+  S.recs.push(rec);setState(rec,'ANALYSED','system');setState(rec,'ALERTED','system',`threshold v${S.thr.version}`);
+  if(rule==='R01'&&z.forecastRain===false){/* noop */}
+ }
+ // irrigation recs approved but rain now expected -> leave, safety check will block
+}
+function setState(r,to,by,note){const from=r.state;r.state=to;r.hist.push({to,at:Date.now(),by,note:note||''});logE(by,'RECOMMENDATION',r.id,from,to,note)}
+function reevaluate(){S.zones.forEach(evaluate);if(S.recs.length>300){const keep=S.recs.filter(r=>OPEN_STATES.includes(r.state));const old=S.recs.filter(r=>!OPEN_STATES.includes(r.state)).slice(-200);S.recs=[...old,...keep]}}
+function openRecs(){return S.recs.filter(r=>OPEN_STATES.includes(r.state)).sort((a,b)=>a.p-b.p||(b.risk?.score||0)-(a.risk?.score||0))}
+function recTitle(r){return t('r_'+r.rule,{z:r.zone})}
+
+/* ---------------------------- observations ---------------------------- */
+function addDrop(z,{tagged,fallen,from,to},by,silent){
+ S.seq.drop++;const rate=r1(100*fallen/tagged);
+ const d={id:'DROP-'+S.seq.drop,tagged,fallen,from,to,rate,stage:z.stage,at:to||Date.now(),by,src:'USER'};persist(d,'fruit_drop');z.drops.push(d);if(z.drops.length>40)z.drops.shift();
+ if(!silent)logE(by,'FRUIT_DROP',d.id,'','CREATED',`${z.id} ${rate}%`);
+ // verify open recount recs
+ S.recs.filter(r=>r.zone===z.id&&r.rule==='R05'&&OPEN_STATES.includes(r.state)&&r.state!=='ALERTED'&&r.state!=='DEFERRED').forEach(r=>setState(r,'VERIFIED',by,'new count entered'));
+ S.recs.filter(r=>r.zone===z.id&&r.rule==='R05'&&(r.state==='ALERTED'||r.state==='DEFERRED')).forEach(r=>{setState(r,'APPROVED',by,'count entered');setState(r,'EXECUTED',by);setState(r,'VERIFIED',by,'new count entered')});
+ return d;
+}
+
+/* ---------------------------- image screening (OpenCV-style fallback) ---------------------------- */
+const loadImg=src=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src});
+function rgb2hsv(r,g,b){r/=255;g/=255;b/=255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn;let h=0;if(d){if(mx===r)h=60*(((g-b)/d)%6);else if(mx===g)h=60*((b-r)/d+2);else h=60*((r-g)/d+4)}if(h<0)h+=360;return [h,mx?d/mx:0,mx]}
+function screenImage(img,part){
+ const ow=img.naturalWidth,oh=img.naturalHeight,sc=Math.min(1,256/Math.max(ow,oh)),w=Math.max(8,Math.round(ow*sc)),h=Math.max(8,Math.round(oh*sc));
+ const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(img,0,0,w,h);
+ const d=x.getImageData(0,0,w,h).data,n=w*h,G=new Float32Array(n);
+ let sum=0,green=0,yellow=0,brown=0,orange=0,dark=0;
+ for(let i=0;i<n;i++){const R=d[i*4],Gr=d[i*4+1],B=d[i*4+2];const gy=.299*R+.587*Gr+.114*B;G[i]=gy;sum+=gy;
+  const [hh,s,v]=rgb2hsv(R,Gr,B);
+  if(s>0.22&&v>0.18){if(hh>=70&&hh<=170)green++;else if(hh>=42&&hh<70&&v>0.45)yellow++;else if(hh>=8&&hh<42){if(v<0.58)brown++;else if(s>0.45)orange++;else yellow++}}
+  else if(v<0.2) dark++;}
+ const mean=sum/n;let ls=0,ls2=0,lc=0;
+ for(let y=1;y<h-1;y++)for(let xx=1;xx<w-1;xx++){const i=y*w+xx;const Lp=4*G[i]-G[i-1]-G[i+1]-G[i-w]-G[i+w];ls+=Lp;ls2+=Lp*Lp;lc++}
+ const lapVar=lc?ls2/lc-(ls/lc)**2:0;
+ let quality='OK';
+ if(Math.min(ow,oh)<224)quality='SMALL';else if(mean<45)quality='DARK';else if(mean>222)quality='BRIGHT';else if(lapVar<40)quality='BLUR';
+ const plant=green+yellow+brown+orange,pf=plant/n;
+ const S0={healthy_looking:0,yellowing_like:0,lesion_spot_like:0,pest_damage_like:0,fruit_blemish_like:0,unknown:0.2};
+ if(pf<0.12){S0.unknown=2}else if(part==='fruit'){
+  const bf=(brown+Math.min(dark,brown*2))/plant;S0.healthy_looking=1.2-6*bf;S0.fruit_blemish_like=7*bf;S0.lesion_spot_like=1.5*bf;S0.yellowing_like=0.6*(green/plant);
+ }else{
+  const base=green+yellow+brown||1,yf=yellow/base,bf=brown/base,df=Math.min(dark/base,0.3);
+  S0.healthy_looking=1.2-4*yf-6*bf-4*df;S0.yellowing_like=5*yf;S0.lesion_spot_like=10*bf;S0.pest_damage_like=5*df;S0.fruit_blemish_like=-1;
+ }
+ if(pf<0.25)S0.unknown+=0.6;
+ const ex=CLASSES.map(k=>Math.exp(3*S0[k])),se=ex.reduce((a,b)=>a+b,0);
+ const probs=CLASSES.map((k,i)=>({k,p:ex[i]/se})).sort((a,b)=>b.p-a.p);
+ return {quality,mean:Math.round(mean),lapVar:Math.round(lapVar),pf:r2(pf),probs:probs.slice(0,3).map(p=>({k:p.k,p:r2(p.p)})),cls:probs[0].k,conf:r2(probs[0].p),margin:r2(probs[0].p-probs[1].p)};
+}
+function toJpeg(img,max,q){const sc=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));const c=document.createElement('canvas');c.width=Math.round(img.naturalWidth*sc);c.height=Math.round(img.naturalHeight*sc);c.getContext('2d').drawImage(img,0,0,c.width,c.height);return c.toDataURL('image/jpeg',q)}
+function demoImage(kind){
+ const c=document.createElement('canvas');c.width=480;c.height=360;const x=c.getContext('2d');const r=rng(kind.length*97+Date.now()%100000);
+ x.fillStyle='#e8e3d8';x.fillRect(0,0,480,360);
+ if(kind==='fruit'){
+  const g=x.createRadialGradient(205,150,20,240,180,140);g.addColorStop(0,'#ffb24d');g.addColorStop(1,'#e2770f');x.fillStyle=g;x.beginPath();x.arc(240,180,130,0,7);x.fill();
+  x.fillStyle='#3d8a3a';x.beginPath();x.ellipse(250,52,30,12,-0.4,0,7);x.fill();
+  x.fillStyle='#5e3f1c';for(let i=0;i<9;i++){x.beginPath();x.arc(170+r()*150,120+r()*130,10+r()*16,0,7);x.fill()}
+ }else{
+  x.save();x.translate(240,180);x.rotate(-0.35);
+  const g=x.createLinearGradient(-200,0,200,0);g.addColorStop(0,'#2f7d34');g.addColorStop(1,'#46a043');x.fillStyle=g;
+  x.beginPath();x.moveTo(-200,0);x.quadraticCurveTo(0,-150,200,0);x.quadraticCurveTo(0,150,-200,0);x.fill();
+  if(kind==='yellow'){x.save();x.clip();x.fillStyle='rgba(222,200,48,.95)';x.beginPath();x.ellipse(110,-10,62,48,0.2,0,7);x.fill();x.restore()}
+  x.strokeStyle='#245f28';x.lineWidth=3;x.beginPath();x.moveTo(-195,0);x.lineTo(195,0);x.stroke();
+  for(let i=-150;i<170;i+=40){x.lineWidth=1.6;x.beginPath();x.moveTo(i,0);x.lineTo(i+35,-55);x.moveTo(i,0);x.lineTo(i+35,55);x.stroke()}
+  if(kind==='spots'){x.fillStyle='#6a4a20';for(let i=0;i<26;i++){x.beginPath();x.arc(-150+r()*300,-55+r()*110,7+r()*13,0,7);x.fill()}}
+  x.restore();
+ }
+ const im=x.getImageData(0,0,480,360),dd=im.data;for(let i=0;i<dd.length;i+=4){const nz=(r()-.5)*28;dd[i]=clamp(dd[i]+nz,0,255);dd[i+1]=clamp(dd[i+1]+nz,0,255);dd[i+2]=clamp(dd[i+2]+nz,0,255)}x.putImageData(im,0,0);
+ if(kind==='blur'){const s=document.createElement('canvas');s.width=36;s.height=27;s.getContext('2d').drawImage(c,0,0,36,27);x.imageSmoothingEnabled=true;x.drawImage(s,0,0,480,360)}
+ return c.toDataURL('image/jpeg',.9);
+}
+
+/* ---------------------------- auth ---------------------------- */
+let fails=0,lockUntil=0;
+let SESSION;
+function sess(){if(SESSION===undefined){try{SESSION=JSON.parse(store.get(SKEY))}catch(e){SESSION=null}}
+ if(!SESSION)return null;if(SESSION.exp<Date.now()){SESSION=null;store.del(SKEY);V.flash=t('session_expired');return null}return SESSION}
+function startSession(u){SESSION={uid:u.id,exp:Date.now()+8*36e5,token:uuid()};store.set(SKEY,JSON.stringify(SESSION))}
+function endSession(){SESSION=null;store.del(SKEY)}
+/* keeps the account table healthy: demo accounts always present & valid, identifiers normalised */
+function ensureUsers(){if(!Array.isArray(S.users))S.users=[];
+ S.users.forEach(u=>{u.identifier=normId(String(u.identifier||'').replace('@santra.demo','@bahar.demo'));u.failed=u.failed||0;u.lockUntil=u.lockUntil||0});
+ DEMO_USERS.forEach(d=>{let u=S.users.find(x=>x.id===d.id)||S.users.find(x=>x.identifier===d.identifier);
+  if(!u){S.users.push(mkUser(d.name,d.identifier,d.pw,d.role,d.id));return}
+  u.identifier=d.identifier;if(!u.role)u.role=d.role;if(!checkPw(u,d.pw))setPw(u,d.pw)})}
+function me(){const s=sess();return s&&S.users.find(u=>u.id===s.uid)}
+function role(){const u=me();return u?u.role:null}
+function can(p){const r=role();return !!r&&(PERM[p]||[]).includes(r)}
+function canSee(scr){const a=ACCESS[scr];const r=role();return a==='*'||(a||[]).includes(r)}
+
+/* ---------------------------- theme ---------------------------- */
+const darkQ=(()=>{try{return matchMedia('(prefers-color-scheme: dark)')}catch(e){return null}})();
+let theme=store.get(TKEY)||(darkQ&&darkQ.matches?'dark':'light');
+function applyTheme(){document.documentElement.setAttribute('data-theme',theme);const m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',theme==='dark'?'#11171c':'#f7f5f0')}
+function themeSwitch(){const d=theme==='dark';return `<button class="tgl" role="switch" aria-checked="${d}" aria-label="${t('dark_mode')}" title="${d?t('light_mode'):t('dark_mode')}" onclick="A.theme()"><span class="s l">${I.sun}</span><span class="s r">${I.moon}</span><span class="k">${d?I.moon:I.sun}</span></button>`}
+if(darkQ&&darkQ.addEventListener)darkQ.addEventListener('change',e=>{if(!store.get(TKEY)){theme=e.matches?'dark':'light';applyTheme();render()}});
+
+/* ---------------------------- UI helpers ---------------------------- */
+const V={scr:'home',zone:'Z2',recFilter:'open',recZone:'all',repTab:'export',selInt:null,selRev:null,simSc:'DRY_SOIL',simSeed:42,simDays:7,simFault:'none',photoPart:'leaf',lastPhoto:null,symptoms:{},labType:'soil',reg:false,flash:'',manDepth:20,busy:false};
+const app=document.getElementById('app');
+function toast(m){const el=document.createElement('div');el.innerHTML=m;document.getElementById('toast').appendChild(el);setTimeout(()=>el.remove(),2800)}
+function modal(h){document.getElementById('modal').innerHTML=`<div class="bg" onclick="if(event.target===this)A.close()"><div class="box">${h}</div></div>`}
+const src=s=>`<span class="src s-${s}">${s}</span>`;
+const catChip=c=>`<span class="cat c-${c}">${CAT_IC[c]} ${t(c)}</span>`;
+const zoneChips=(cur,fn,all)=>`<div class="chips">${all?`<button class="chip ${cur==='all'?'on':''}" onclick="${fn}('all')">${t('all')}</button>`:''}${S.zones.map(z=>`<button class="chip ${cur===z.id?'on':''}" onclick="${fn}('${z.id}')"><span class="dot" style="background:${CAT_COL[z.risk?.cat||'LOW']}"></span>${z.id}</button>`).join('')}</div>`;
+function gauge(score,cat,w=130){const a=Math.PI*(1-clamp(score/100));const x=60+48*Math.cos(a),y=58-48*Math.sin(a),col=CAT_COL[cat];
+ return `<svg viewBox="0 0 120 68" width="${w}" aria-label="risk ${score}"><path d="M12 58 A48 48 0 0 1 108 58" fill="none" style="stroke:var(--track)" stroke-width="11" stroke-linecap="round"/>${score>0.5?`<path d="M12 58 A48 48 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}" fill="none" stroke="${col}" stroke-width="11" stroke-linecap="round"/>`:''}<text x="60" y="55" text-anchor="middle" font-size="22" font-weight="800" fill="${col}">${Math.round(score)}</text></svg>`}
+function chart(series,o={}){
+ const W=640,H=o.h||180,pl=42,pr=10,pt=10,pb=22,ts=o.ts||[];
+ const n=Math.max(1,...series.map(s=>s.vals.length));
+ let all=series.flatMap(s=>s.vals).filter(v=>v!=null);(o.lines||[]).forEach(l=>all.push(l.v));if(!all.length)all=[0,1];
+ let lo=o.ymin??Math.min(...all),hi=o.ymax??Math.max(...all);if(hi-lo<1e-6){hi+=1;lo-=1}const pad=(hi-lo)*.08;if(o.ymin==null)lo-=pad;if(o.ymax==null)hi+=pad;
+ const X=i=>pl+(W-pl-pr)*i/Math.max(1,n-1),Y=v=>pt+(H-pt-pb)*(1-(v-lo)/(hi-lo));
+ let g='';for(let k=0;k<=3;k++){const v=lo+(hi-lo)*k/3;g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" class="gl"/><text x="${pl-5}" y="${Y(v)+4}" class="ax" text-anchor="end">${fmtN(v)}</text>`}
+ if(o.bars){const bm=Math.max(1,...o.bars.vals.map(v=>v||0));o.bars.vals.forEach((v,i)=>{if(v>0){const bh=(H-pt-pb)*0.45*v/bm;g+=`<rect x="${X(i)-2}" y="${H-pb-bh}" width="4" height="${bh}" fill="${o.bars.color}" opacity=".7"><title>${v} mm</title></rect>`}})}
+ (o.lines||[]).forEach(l=>g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(l.v)}" y2="${Y(l.v)}" stroke="${l.color}" stroke-dasharray="6 5" stroke-width="1.6"/><text x="${W-pr-4}" y="${Y(l.v)-4}" text-anchor="end" class="ax" style="fill:${l.color};font-weight:700">${esc(l.label)}</text>`);
+ series.forEach(s=>{let dd='',pen=false;s.vals.forEach((v,i)=>{if(v==null){pen=false;return}dd+=(pen?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);pen=true});g+=`<path d="${dd}" fill="none" stroke="${s.color}" stroke-width="2.4" stroke-linejoin="round"/>`;
+  if(s.flags)s.flags.forEach((f,i)=>{if(f&&f!=='OK'&&s.vals[i]!=null)g+=`<circle cx="${X(i)}" cy="${Y(s.vals[i])}" r="4" fill="#c8372d"><title>${f} ${s.vals[i]}</title></circle>`})});
+ if(ts.length){for(let i=0;i<ts.length;i+=Math.max(24,Math.ceil(ts.length/7/24)*24)){g+=`<text x="${X(i)}" y="${H-5}" class="ax" text-anchor="start">${fmtD(ts[i])}</text>`}}
+ return `<svg viewBox="0 0 ${W} ${H}" class="chart" role="img">${g}</svg>`;
+}
+function navBtns(){const op=openRecs().length,rev=pendingReviews().length,ready=S.ints.filter(i=>i.status==='READY'||i.status==='RUNNING').length;
+ const bd={recs:op,reviews:rev,irrig:ready};
+ return NAV.filter(([k])=>canSee(k)).map(([k,i])=>`<button class="nb ${V.scr===k?'on':''}" onclick="A.go('${k}')"><span class="i">${i}</span>${t(k)}${bd[k]?`<span class="bd">${bd[k]}</span>`:''}</button>`).join('')}
+function topBar(u){const off=isOffline();
+ return `<header class="top"><div class="brand mob" onclick="A.go('home')"><div class="logo"></div><span class="hs wm">Bahar</span></div><div class="crumb"><span>${esc(S.orchard.name)}</span><span class="sep">/</span><b>${t(V.scr)}</b></div><span class="sp"></span>
+ <span class="pill sim" title="All sensor readings are simulated">${I.flask} <span class="hs">${t('sim_data')}</span></span>
+ <button class="pill ${off?'off':'on'}" onclick="A.toggleOffline()" title="Tap to switch online/offline"><span class="dot" style="width:8px;height:8px;background:${off?'var(--red)':'var(--gr)'}"></span> <span class="hs">${off?t('offline'):t('online')}</span></button>
+ ${S.queue.length?`<button class="pill pend" onclick="A.sync()">${I.hourglass} ${S.queue.length} <span class="hs">${t('pending')}</span></button>`:''}
+ ${themeSwitch()}
+ <div class="langs">${['mr','hi','en'].map(l=>`<button class="${lang===l?'on':''}" onclick="A.lang('${l}')">${l==='mr'?'म':l==='hi'?'हि':'EN'}</button>`).join('')}</div>
+ <span class="pill mob" title="${esc(u.name)}">${ROLE_IC[u.role]} <span class="hs">${esc(u.name.split(' (')[0])}</span></span>
+ <button class="ibtn mob" title="${t('logout')}" onclick="A.logout()">${I.logout}</button></header>`}
+function sideBar(u){return `<div class="sbrand" onclick="A.go('home')"><div class="logo"></div><div><div class="sname">Bahar</div><div class="stag">Orchard care</div></div></div>
+ <div class="slabel">${esc(S.orchard.name)}</div><nav class="snav">${navBtns()}</nav>
+ <div class="suser"><span class="sav">${ROLE_IC[u.role]}</span><div class="sinfo"><b>${esc(u.name.split(' (')[0])}</b><small>${t(u.role==='pending'?'pending_role':u.role)}</small></div><button class="slog" title="${t('logout')}" onclick="A.logout()">${I.logout}</button></div>`}
+function pageWrap(html){const i=html.indexOf('<h1>');if(i<0)return html;const j=html.indexOf('</h1>',i);
+ const d=new Date();return html.slice(0,i)+`<header class="ph"><p class="ph-eb">${esc(S.orchard.name)} · ${d.getDate()} ${MON[d.getMonth()]} ${d.getFullYear()}</p><h1>`+html.slice(i+4,j)+'</h1></header>'+html.slice(j+5)}
+
+/* ---------------------------- screens ---------------------------- */
+function loginView(){
+ const lk=lockUntil>Date.now();
+ const langs=`<div class="langs">${['mr','hi','en'].map(l=>`<button class="${lang===l?'on':''}" onclick="A.lang('${l}')">${l==='mr'?'मराठी':l==='hi'?'हिंदी':'English'}</button>`).join('')}</div>`;
+ const form=V.reg?`<h2 class="ah">${t('register')}</h2>
+  <label class="f">${t('name')}</label><input id="rn" autocomplete="name">
+  <label class="f">${t('identifier')}</label><input id="ri" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="name@email.com / 98XXXXXXXX">
+  <label class="f">${t('password')}</label><div class="pw"><input id="rp" type="password" autocomplete="new-password" placeholder="${t('pw_short')}"><button type="button" class="pwt" onclick="A.togglePw(this)" aria-label="show">${I.eye}</button></div>
+  <label class="f">${t('confirm_pw')}</label><div class="pw"><input id="rp2" type="password" autocomplete="new-password" onkeydown="if(event.key==='Enter')A.register()"><button type="button" class="pwt" onclick="A.togglePw(this)" aria-label="show">${I.eye}</button></div>
+  <label class="f">${t('role')}</label><div class="seg">${['farmer','worker'].map(r=>`<button type="button" class="${(V.regRole||'farmer')===r?'on':''}" onclick="V.regRole='${r}';document.querySelectorAll('.seg button').forEach(b=>b.classList.toggle('on',b===this))">${ROLE_IC[r]} ${t(r)}</button>`).join('')}</div>
+  <p class="hint">${t('role_hint')}</p>
+  <div id="lerr" class="aerr" role="alert"></div>
+  <button class="btn w" onclick="A.register()">${t('register')}</button>
+  <p class="alink"><button onclick="V.reg=false;render()">← ${t('signin')}</button></p>`
+ :`<h2 class="ah">${t('signin')}</h2>
+  <label class="f">${t('identifier')}</label><input id="li" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')A.login()">
+  <label class="f">${t('password')}</label><div class="pw"><input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')A.login()"><button type="button" class="pwt" onclick="A.togglePw(this)" aria-label="show">${I.eye}</button></div>
+  <div id="lerr" class="aerr" role="alert"></div>
+  <button class="btn w" onclick="A.login()" ${lk?'disabled':''}>${t('signin')} ${I.arrowr}</button>
+  <p class="alink"><button onclick="V.reg=true;render()">${t('register')}</button></p>`;
+ return `<div class="auth">
+ <section class="bpanel">
+  <svg class="rind" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="110"/>${[0,30,60,90,120,150].map(a=>`<line x1="${200+190*Math.cos(a*Math.PI/180)}" y1="${200+190*Math.sin(a*Math.PI/180)}" x2="${200-190*Math.cos(a*Math.PI/180)}" y2="${200-190*Math.sin(a*Math.PI/180)}"/>`).join('')}</g></svg>
+  <div class="bmark"><div class="logo"></div><span>Bahar</span></div>
+  <div class="block" role="heading" aria-level="1" aria-label="Bahar — orchard care for Nagpur Mandarin">
+   <div class="bword">Bahar</div>
+   <div class="brule"></div>
+   <div class="btag">Orchard care for Nagpur Mandarin</div>
+  </div>
+  <div class="bfoot"><span>Bahar — orchard care for Nagpur Mandarin</span><span>Phase 1 prototype · simulated sensor data</span></div>
+ </section>
+ <section class="apanel">
+  <div class="atop">${themeSwitch()}${langs}</div>
+  <div class="acol">
+   ${V.flash?`<div class="banner y">${I.clock} ${esc(V.flash)}</div>`:''}
+   ${STORE_KIND!=='localStorage'?`<div class="snote">${I.alertc}<span>${t('store_note')}</span></div>`:''}
+   ${form}
+   <div class="adiv"><span>${t('demo_logins')}</span></div>
+   <div class="dlist">${DEMO_USERS.map(u=>`<button class="drow" onclick="A.demoLogin('${u.id}')"><span class="di">${ROLE_IC[u.role]}</span><span class="dt"><b>${t(u.role)}</b><small>${u.identifier} · ${u.pw}</small></span><span class="dch">${I.arrowr}</span></button>`).join('')}</div>
+  </div>
+ </section></div>`;
+}
+function homeView(u){
+ const top=openRecs().filter(r=>!r.expert||can('decide_expert'))[0];
+ const tiles=NAV.filter(([k])=>k!=='home'&&canSee(k));
+ const col={dash:'var(--gr-l)',recs:'var(--yel-l)',irrig:'var(--blu-l)',photos:'var(--pur-l)',obs:'var(--or-l)',monitor:'var(--blu-l)',orchard:'var(--gr-l)',reviews:'var(--pur-l)',reports:'var(--neu)'};
+ const bd={recs:openRecs().length,reviews:pendingReviews().length,irrig:S.ints.filter(i=>i.status==='READY'||i.status==='RUNNING').length};
+ return `<h1>${t('hello')}, ${esc(u.name.split(' (')[0])}</h1>
+ ${isOffline()?`<div class="banner r">${I.wifioff} ${t('offline_note')}</div>`:''}
+ ${S.estop?`<div class="banner r">${I.octagon} ${t('estop_on')}</div>`:''}
+ <div class="grid g3" style="margin-bottom:14px">${S.zones.map(z=>{const k=z.risk||{score:0,cat:'LOW'};return `<div class="card zc ${k.cat}" style="margin:0;display:flex;align-items:center;gap:12px" onclick="A.zoneInfo('${z.id}')">${gauge(k.score,k.cat,96)}<div><div class="zname">${z.id} ${STAGE_IC[z.stage]}</div>${catChip(k.cat)}</div></div>`}).join('')}</div>
+ <div class="card focus ${top?'':'ok'}">
+ ${top?`<div class="hl"><span class="ico">${REC_IC[top.rule]}</span><div style="flex:1;min-width:180px"><div class="small mut">${I.star} ${t('top_action')}</div><div style="font-size:20px;font-weight:800">${esc(recTitle(top))}</div>${top.plan?`<div class="mut">${top.plan.net} mm · ≈${top.plan.vol} m³ · ≈${top.plan.hrs} h</div>`:''}</div><button class="btn big" onclick="A.go('recs')">${I.bulb} ${t('recs')}</button></div>`
+ :`<div class="hl"><span class="ico">${I.check}</span><b style="font-size:19px">${t('all_clear')}</b></div>`}</div>
+ <div class="tiles">${tiles.map(([k,i])=>`<button class="tile" onclick="A.go('${k}')"><span class="i" style="background:${col[k]}">${i}</span>${t(k)}${bd[k]?`<span class="bd">${bd[k]}</span>`:''}</button>`).join('')}</div>`;
+}
+function dashView(){
+ return `<h1>${I.map} ${t('dash')}</h1><div class="grid g3">${S.zones.map(z=>{const a=z.a,k=z.risk;if(!k)return'';const ps=photoStats(z),ld=z.drops[z.drops.length-1];
+  const dpct=a&&a.Dr!=null?clamp(a.Dr/a.TAW):0,rpct=a?a.RAW/a.TAW:0.5;
+  return `<div class="card zc ${k.cat}" onclick="A.zoneInfo('${z.id}')"><div class="zh"><div><div class="zname">${z.id}</div><div class="small mut">${STAGE_IC[z.stage]} ${t(z.stage)} · ${I.tree} ${z.trees}</div></div>${gauge(k.score,k.cat,110)}</div>
+  <div class="row" style="justify-content:space-between">${catChip(k.cat)}<span class="small mut">${t('uncertainty')}: <b>${t(k.unc)}</b></span></div>
+  <div class="stats">
+   <div class="st"><span class="i">${I.drop}</span><div><b>${a&&a.v!=null?a.v:'—'}</b><small>${t('soil')} ${src('SIM')}</small></div></div>
+   <div class="st"><span class="i">${I.thermo}</span><div><b>${a?r2(a.ESI):'—'}</b><small>${t('stress')} ${src('PRED')}</small></div></div>
+   <div class="st"><span class="i">${I.leaf}</span><div><b>${ld?ld.rate+'%':'—'}</b><small>${t('drop')} ${src('USER')}</small></div></div>
+   <div class="st"><span class="i">${I.camera}</span><div><b>${ps.pendingReview}</b><small>${t('flagged')} ${src('IMG')}</small></div></div>
+  </div>
+  <div style="margin-top:10px"><div class="small mut">${I.trenddown} ${t('depletion')}: <b>${a&&a.Dr!=null?Math.round(a.Dr):'—'} mm</b> / RAW ${a?Math.round(a.RAW):'—'} mm</div>
+  <div class="bar" style="margin-top:4px"><i style="width:${dpct*100}%;background:${dpct>rpct?'#d9661f':'#3d8ed8'}"></i><span style="position:absolute;left:${rpct*100}%;top:0;bottom:0;width:2px;background:var(--ink)"></span></div></div>
+  ${z.forecastRain?`<div class="banner b" style="margin:10px 0 0;padding:8px 10px">${I.rain} ${t('ev_rain')}</div>`:''}
+  </div>`}).join('')}</div>
+ <div class="card"><h2>${I.bell} ${t('recs')}</h2>${openRecs().slice(0,5).map(r=>`<div class="row" style="padding:8px 0;border-bottom:1px solid var(--soft);cursor:pointer" onclick="A.go('recs')"><span class="ico s">${REC_IC[r.rule]}</span><span class="pr p${r.p}">P${r.p}</span><b style="flex:1">${esc(recTitle(r))}</b><span class="state">${t(r.state)}</span></div>`).join('')||`<p>${I.check} ${t('all_clear')}</p>`}
+ <p class="small mut">${I.clock} ${t('updated')} ${fmtT(Math.max(...S.zones.map(z=>z.risk?.at||0)))} · threshold v${S.thr.version}</p></div>`;
+}
+function zoneInfoHtml(id){const z=Z(id),a=z.a,k=z.risk;
+ return `<div class="zh"><h2>${z.id} · ${STAGE_IC[z.stage]} ${t(z.stage)}</h2><button class="ibtn" onclick="A.close()">${I.x}</button></div>
+ <div class="row">${gauge(k.score,k.cat,140)}<div>${catChip(k.cat)}<p class="small" style="margin:8px 0 0">${t('range')}: <b>${k.lo} – ${k.hi}</b><br>${t('uncertainty')}: <b>${t(k.unc)}</b><br>${t('completeness')}: <b>${Math.round(k.comp*100)}%</b> · ${t('quality')}: <b>${Math.round(k.dq*100)}%</b></p></div></div>
+ <p class="small mut">Risk score (0–100), not a probability. Threshold v${k.ver} (unvalidated demo values).</p>
+ <h3>${t('factors')}</h3>${[...k.factors].sort((x,y)=>y.c-x.c).map(f=>`<div style="margin-bottom:9px"><div class="row small" style="justify-content:space-between"><span>${t(f.k)} ${src(f.src)}</span><b>${f.v==null?'— no data':'+'+r1(f.c)}</b></div><div class="bar"><i style="width:${f.v==null?0:clamp(f.c/40)*100}%;background:${CAT_COL[k.cat]}"></i></div></div>`).join('')}
+ ${k.guard.length?`<div class="banner y">${I.shield} ${k.guard.map(esc).join('<br>')}</div>`:''}
+ ${a?`<h3>${I.drop} Soil water (FAO-56) & ${I.sun} ET</h3><div class="tw"><table><tr><td>ET₀ (Hargreaves)</td><td><b>${a.ET0!=null?r1(a.ET0):'—'}</b> mm/day ${src('PRED')}</td><td>ETc</td><td><b>${a.ETc!=null?r1(a.ETc):'—'}</b> mm/day</td></tr>
+ <tr><td>TAW</td><td><b>${Math.round(a.TAW)}</b> mm</td><td>RAW</td><td><b>${Math.round(a.RAW)}</b> mm</td></tr><tr><td>Dr</td><td><b>${a.Dr!=null?Math.round(a.Dr):'—'}</b> mm</td><td>Ks</td><td><b>${a.Ks!=null?r2(a.Ks):'—'}</b></td></tr>
+ <tr><td>T max/min</td><td>${a.Tmax!=null?r1(a.Tmax)+' / '+r1(a.Tmin)+' °C':'—'}</td><td>RH min</td><td>${a.RHmin??'—'} %</td></tr></table></div>`:`<p>${t('no_readings')}</p>`}
+ <div class="row" style="margin-top:12px"><button class="btn o" onclick="A.close();V.zone='${z.id}';A.go('monitor')">${I.chart} ${t('monitor')}</button><button class="btn" onclick="A.close();V.recZone='${z.id}';A.go('recs')">${I.bulb} ${t('recs')}</button></div>`}
+function monitorView(){
+ const z=Z(V.zone),a=z.a,R=z.readings,cr=can('run_sim');
+ const flags={};R.forEach(p=>flags[p.q]=(flags[p.q]||0)+1);
+ return `<h1>${I.chart} ${t('monitor')}</h1>${zoneChips(V.zone,'A.setZone')}
+ ${cr?`<div class="card" style="margin-top:12px"><h2>${I.flask} ${t('scenario')} <span class="pill sim">${t('sim_data')}</span></h2>
+ <div class="opt">${SCEN.map(([k,i])=>`<button class="${V.simSc===k?'on':''}" onclick="V.simSc='${k}';render()"><span class="i">${i}</span>${t('sc_'+k)}</button>`).join('')}</div>
+ <div class="row" style="margin-top:12px;align-items:flex-end"><div style="width:130px"><label class="f">${I.hash} ${t('seed')}</label><input type="number" id="seed" value="${V.simSeed}" min="0" max="999999"></div>
+ <div><label class="f">${I.calendar} ${t('days')}</label><div class="chips">${[3,7,14].map(d=>`<button class="chip ${V.simDays===d?'on':''}" onclick="V.simSeed=+document.getElementById('seed').value||0;V.simDays=${d};render()">${d}</button>`).join('')}</div></div></div>
+ <label class="f">${I.wrench} ${t('fault')}</label><div class="chips">${FAULTS.map(([k,i])=>`<button class="chip ${V.simFault===k?'on':''}" onclick="V.simSeed=+document.getElementById('seed').value||0;V.simFault='${k}';render()">${i} ${t('f_'+k)}</button>`).join('')}</div>
+ <button class="btn big" style="margin-top:14px" onclick="A.generate()">${I.play} ${t('generate')}</button>
+ ${z.run?`<p class="small mut">Last run: ${t('sc_'+z.run.sc)} · seed ${z.run.seed} · ${z.run.days} d · fault ${z.run.fault} · ${fmtT(z.run.at)} — same seed always gives the same series.</p>`:''}</div>`:''}
+ ${!R.length?`<div class="card">${t('no_readings')}</div>`:`
+ <div class="kpis" style="margin-top:12px">
+  <div class="st"><span class="i">${I.drop}</span><div><b>${a.v??'—'}</b><small>VWC m³/m³ ${src('SIM')}</small></div></div>
+  <div class="st"><span class="i">${I.trenddown}</span><div><b>${a.Dr!=null?Math.round(a.Dr):'—'} / ${Math.round(a.RAW)}</b><small>Dr / RAW mm</small></div></div>
+  <div class="st"><span class="i">${I.scale}</span><div><b>${a.Ks!=null?r2(a.Ks):'—'}</b><small>Ks ${src('PRED')}</small></div></div>
+  <div class="st"><span class="i">${I.sun}</span><div><b>${a.ET0!=null?r1(a.ET0):'—'}</b><small>ET₀ mm/d ${src('PRED')}</small></div></div>
+  <div class="st"><span class="i">${I.thermo}</span><div><b>${r2(a.ESI)}</b><small>${t('stress')} ${src('PRED')}</small></div></div>
+  <div class="st"><span class="i">${I.shield}</span><div><b>${Math.round(a.quality*100)}%</b><small>${t('quality')} 24 h</small></div></div>
+ </div>
+ <div class="card"><h2>${I.drop} ${t('soil')} (m³/m³) <span class="pill sim">${t('sim_data')}</span></h2>${chart([{vals:R.map(p=>p.vwc),color:'#2a69a8',flags:R.map(p=>p.q)}],{ts:R.map(p=>p.ts),lines:[{v:z.fc,label:'FC',color:'#2c8a55'},{v:r3(a.vRAW),label:'RAW',color:'#d9661f'},{v:z.wp,label:'WP',color:'#c8372d'}]})}
+ <div class="chips" style="margin-top:6px">${Object.entries(flags).map(([k,n])=>`<span class="pill" style="${k==='OK'?'':'background:var(--red-l);color:var(--red)'}">${k==='OK'?I.check:I.alertc} ${k}: ${n}</span>`).join('')}</div><p class="small mut">${I.alertc} Flagged points are stored but not used for decisions.</p></div>
+ <div class="grid g2"><div class="card"><h2>${I.thermo} °C &nbsp;<span style="color:#2a69a8">${I.drop} RH %</span></h2>${chart([{vals:R.map(p=>p.temp),color:'#d9661f'},{vals:R.map(p=>p.rh),color:'#2a69a8'}],{ts:R.map(p=>p.ts),h:160})}</div>
+ <div class="card"><h2>${I.rain} mm &nbsp;<span style="color:#c99a00">${I.sun} light</span></h2>${chart([{vals:R.map(p=>p.light/20),color:'#e3b800'}],{ts:R.map(p=>p.ts),h:160,bars:{vals:R.map(p=>p.rain+(p.irr||0)),color:'#2a69a8'},ymin:0})}<p class="small mut">Bars: rain + irrigation (mm). Line: light ÷ 20 (W/m²).</p></div></div>
+ <div class="card"><h2>${I.list} ${t('quality')}</h2><div class="tw"><table><tr><th>Time</th><th>VWC</th><th>°C</th><th>RH</th><th>${t('quality')}</th></tr>${R.slice(-10).reverse().map(p=>`<tr><td>${fmtT(p.ts)}</td><td>${p.vwc??'—'}</td><td>${p.temp??'—'}</td><td>${p.rh??'—'}</td><td>${p.q==='OK'?'OK':''+p.q}</td></tr>`).join('')}</table></div></div>`}`;
+}
+function photosView(){
+ const z=Z(V.zone),lp=V.lastPhoto&&allPhotos().find(p=>p.id===V.lastPhoto);
+ const sy=[['yellow',I.half+' '+t('yellowing_like')],['spots',I.spots+' '+t('lesion_spot_like')],['holes',I.dashed+' '+t('sy_holes')],['curl',I.refresh+' '+t('sy_curl')],['drop',I.leaf+' '+t('drop')]];
+ return `<h1>${I.camera} ${t('photos')}</h1>${zoneChips(V.zone,'A.setZone')}
+ <div class="grid g2" style="margin-top:12px"><div class="card"><h2>${I.upload} ${t('upload')}</h2>
+ <div class="chips" style="margin-bottom:10px">${[['leaf',I.leaf],['fruit',I.citrus],['canopy',I.tree]].map(([k,i])=>`<button class="chip ${V.photoPart===k?'on':''}" onclick="V.photoPart='${k}';render()">${i} ${t(k)}</button>`).join('')}<span class="pill">${STAGE_IC[z.stage]} ${t(z.stage)}</span></div>
+ <label class="drop"><span class="i">${I.camera}</span>${t('upload')}<span class="small mut">JPEG / PNG · ≥ 224 px</span><input type="file" accept="image/jpeg,image/png,image/webp" style="display:none" onchange="A.photoFile(this)" ${V.busy?'disabled':''}></label>
+ <h3>${t('demo_imgs')}</h3><div class="chips">${[['healthy',I.leaf+' '+t('healthy_looking')],['yellow',I.half+' '+t('yellowing_like')],['spots',I.spots+' '+t('lesion_spot_like')],['blur',I.blur+' '+t('sy_blur')],['fruit',I.citrus+' '+t('fruit_blemish_like')]].map(([k,i])=>`<button class="chip" onclick="A.demoPhoto('${k}')">${i}</button>`).join('')}</div>
+ <h3>${t('symptoms')}</h3><div class="chips">${sy.map(([k,i])=>`<button class="chip ${V.symptoms[k]?'on':''}" onclick="V.symptoms['${k}']=!V.symptoms['${k}'];render()">${i}</button>`).join('')}</div>
+ </div>
+ <div class="card"><h2>${I.search} ${t('result')}</h2>${lp?photoResult(lp):`<p class="ico xl">${I.image}</p>`}</div></div>
+ <div class="card"><h2>${I.archive} ${t('history')} · ${z.id}</h2><div class="thumbs">${z.photos.map(p=>`<div class="th" onclick="V.lastPhoto='${p.id}';render();scrollTo(0,0)">${p.img?`<img src="${p.img}" alt="">`:'<div style="aspect-ratio:4/3;display:grid;place-items:center;font-size:26px;color:var(--mut)"></div>'}<div>${p.quality!=='OK'?''+p.quality:(CLS_IC[p.expertCls||p.cls]+' '+(p.expertCls?'EXPERT':Math.round(p.conf*100)+'%'))}${p.review&&!p.expertCls?' '+I.scan:''}${p.pending?' '+I.hourglass:''}</div></div>`).join('')||'<p class="mut">—</p>'}</div></div>`;
+}
+function photoResult(p){
+ const lbl=p.expertCls||p.cls;
+ return `${p.img?`<img src="${p.img}" style="width:100%;border-radius:14px;max-height:240px;object-fit:cover">`:''}
+ ${p.quality!=='OK'?`<div class="banner r" style="margin-top:10px">${I.blur} ${p.quality} — ${t('retake')}</div>`:`
+ <div class="hl" style="margin-top:10px"><span class="ico">${CLS_IC[lbl]}</span><div><div style="font-size:21px;font-weight:800">${t(lbl)}</div>${p.expertCls?src('EXPERT'):src('IMG')}</div></div>
+ ${!p.expertCls?`<div class="small" style="margin-top:8px">${t('confidence')}: <b>${Math.round(p.conf*100)}%</b></div><div class="bar"><i style="width:${p.conf*100}%;background:${p.conf>=S.thr.vals.conf_min?'#2c8a55':'#d4a200'}"></i></div>
+ <div class="small mut" style="margin-top:6px">${p.probs.map(x=>`${CLS_IC[x.k]} ${t(x.k)} ${Math.round(x.p*100)}%`).join(' · ')}</div>`:''}`}
+ <p class="small mut">ℹ ${t('visual_note')} Confidence is not calibrated.</p>
+ ${p.review&&!p.expertCls?`<div class="banner y">${I.scan} ${t('expert_req')} <span class="small">(${p.reasons.join(', ')})</span></div>`:''}
+ ${p.expertNote?`<div class="banner g">${I.scan} ${esc(p.expertNote)}</div>`:''}${p.retakeReq?`<div class="banner b">${I.camera} ${t('req_photos')}</div>`:''}
+ <p class="small mut">${p.id} · ${p.zone} · ${t(p.part)} · ${fmtT(p.ts)}</p>`;
+}
+function obsView(){
+ const z=Z(V.zone),now=Date.now(),ld=z.drops[z.drops.length-1];
+ return `<h1>${I.citrus} ${t('obs')}</h1>${zoneChips(V.zone,'A.setZone')}
+ <div class="grid g2" style="margin-top:12px"><div class="card"><h2>${I.leaf} ${t('drop')}</h2>
+ <label class="f">${I.tag} ${t('tagged')}</label><div class="step"><button onclick="A.step('tg',-10)">−</button><input id="tg" type="number" value="${ld?ld.tagged:400}" oninput="A.rate()"><button onclick="A.step('tg',10)">+</button></div>
+ <label class="f">${I.leaf} ${t('fallen')}</label><div class="step"><button onclick="A.step('fl',-1)">−</button><input id="fl" type="number" value="0" oninput="A.rate()"><button onclick="A.step('fl',1)">+</button></div>
+ <div class="row"><div style="flex:1"><label class="f">${I.calendar} ${t('from')}</label><input id="df" type="date" value="${isoD(now-7*864e5)}"></div><div style="flex:1"><label class="f">${I.calendar} ${t('to')}</label><input id="dt" type="date" value="${isoD(now)}"></div></div>
+ <div class="hl" style="margin:14px 0"><span class="bignum" id="rateOut">0%</span><span class="mut">${t('drop')} · ${STAGE_IC[z.stage]} ${t(z.stage)}</span></div>
+ <div id="obsErr" class="small" style="color:var(--red);min-height:18px"></div>
+ ${can('observe')?`<button class="btn big w" onclick="A.saveDrop()">${I.save} ${t('save')}</button>`:''}
+ <h3>${t('history')}</h3>${chart([{vals:z.drops.map(d=>d.rate),color:'#d9661f'}],{h:120,ymin:0,lines:[{v:S.thr.vals.drop_guard,label:S.thr.vals.drop_guard+'%',color:'#c8372d'}]})}
+ <div class="tw"><table>${z.drops.slice(-6).reverse().map(d=>`<tr><td>${fmtD(d.to)}</td><td>${d.fallen}/${d.tagged}</td><td><b>${d.rate}%</b> ${src('USER')}${d.pending?' '+I.hourglass:''}</td></tr>`).join('')}</table></div></div>
+ <div class="card"><h2>${I.flask} ${t('lab')}</h2>
+ <div class="chips">${[['soil',I.layers],['leaf',I.leaf],['water',I.drop]].map(([k,i])=>`<button class="chip ${V.labType===k?'on':''}" onclick="V.labType='${k}';render()">${i} ${k}</button>`).join('')}</div>
+ <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px">${['N','P','K','pH','EC','Zn'].map(k=>`<div><label class="f">${k}</label><input id="lab_${k}" type="number" step="any"></div>`).join('')}</div>
+ <label class="f">${I.edit} Note</label><input id="lab_note" maxlength="200">
+ <div class="banner b" style="margin-top:10px">${I.ban} ${t('no_dose')}</div>
+ ${can('lab')?`<button class="btn g w" onclick="A.saveLab()">${I.save} ${t('save')}</button>`:''}
+ <h3>${t('history')}</h3><div class="tw"><table>${z.labs.slice().reverse().map(l=>`<tr><td>${fmtD(l.at)}</td><td>${l.type}</td><td class="small">${Object.entries(l.vals).map(([k,v])=>`${k} ${v}`).join(' · ')}</td><td>${src(l.reviewed?'EXPERT':'LAB')}</td></tr>`).join('')||'<tr><td class="mut">—</td></tr>'}</table></div></div></div>`;
+}
+function recsView(){
+ let list=S.recs.slice();
+ if(V.recFilter==='open')list=list.filter(r=>OPEN_STATES.includes(r.state));else if(V.recFilter==='done')list=list.filter(r=>!OPEN_STATES.includes(r.state));
+ if(V.recZone!=='all')list=list.filter(r=>r.zone===V.recZone);
+ list.sort((a,b)=>(OPEN_STATES.includes(b.state)-OPEN_STATES.includes(a.state))||a.p-b.p||b.created-a.created);
+ return `<h1>${I.bulb} ${t('recs')}</h1><div class="row" style="justify-content:space-between"><div class="chips">${[['open',I.inbox],['done',I.check],['all',I.archive]].map(([k,i])=>`<button class="chip ${V.recFilter===k?'on':''}" onclick="V.recFilter='${k}';render()">${i} ${t(k)}</button>`).join('')}</div>${zoneChips(V.recZone,'A.setRecZone',true)}</div>
+ <div style="margin-top:12px">${list.slice(0,60).map(recCard).join('')||`<div class="card" style="text-align:center"><div class="ico xl">${I.check}</div><b>${t('all_clear')}</b></div>`}</div>`;
+}
+function recCard(r){
+ const dec=r.expert?can('decide_expert'):can('decide');const st=r.state;
+ const int=S.ints.slice().reverse().find(i=>i.rec===r.id);
+ return `<div class="card rec p${r.p}"><div class="hl"><span class="ico">${REC_IC[r.rule]}</span><div style="flex:1;min-width:200px">
+ <div class="row"><span class="pr p${r.p}">P${r.p}</span><span class="state">${t(st)}</span>${r.expert?`<span class="pill">${I.scan} ${t('expert_items')}</span>`:''}<span class="small mut">${r.id}</span></div>
+ <div style="font-size:19px;font-weight:800;margin-top:4px">${esc(recTitle(r))}</div>
+ ${r.plan?`<div style="font-size:17px;font-weight:700;color:var(--blu)">${I.drop} ${r.plan.net} mm · ≈${r.plan.vol} m³ · ≈${r.plan.hrs} h</div>`:`<div class="mut">${t('d_'+r.rule)}</div>`}
+ <div class="small mut">${r.risk?`${CAT_IC[r.risk.cat]} ${t(r.risk.cat)} ${r.risk.score} · ${t('uncertainty')} ${t(r.risk.unc)} · `:''}${I.clock} ${t('p'+r.p)}</div></div></div>
+ <div class="evi">${(r.evidence||[]).map(e=>`<span>${esc(t(e.k))}: <b>${esc(e.val)}</b> ${src(e.src)}</span>`).join('')}</div>
+ <div class="small mut">${I.tick} ${t(r.verify)}${int&&int.ver?` · ${int.ver.status==='VERIFIED'?I.check:int.ver.status==='INCONCLUSIVE'?I.help:I.x} ${t(int.ver.status)} (${int.ver.ratio})`:''}</div>
+ ${r.reason?`<div class="small" style="margin-top:4px">${I.msg} ${esc(r.reason)}</div>`:''}
+ <div class="row" style="margin-top:10px">
+ ${st==='ALERTED'&&dec?`<button class="btn g" onclick="A.decide('${r.id}','APPROVED')">${I.check} ${t('approve')}</button><button class="btn o" onclick="A.decide('${r.id}','DEFERRED')">${I.pause} ${t('defer')}</button><button class="btn o" style="color:var(--red)" onclick="A.decide('${r.id}','REJECTED')">${I.x} ${t('reject')}</button>`:''}
+ ${st==='DEFERRED'&&dec?`<button class="btn o" onclick="A.reopen('${r.id}')">${I.refresh} ${t('reopen')}</button>`:''}
+ ${st==='APPROVED'&&(r.rule==='R01'||r.rule==='MAN')?`<button class="btn b" onclick="V.selInt='${int?int.id:''}';A.go('irrig')">${I.drop} ${t('go_water')}</button>`:''}
+ ${st==='APPROVED'&&r.rule!=='R01'&&r.rule!=='MAN'&&r.rule!=='R04'&&r.rule!=='R07'&&(can('decide')||can('execute'))?`<button class="btn g" onclick="A.markDone('${r.id}')">${I.tick} ${t('mark_done')}</button>`:''}
+ ${st==='APPROVED'&&(r.rule==='R04'||r.rule==='R07')&&can('review')?`<button class="btn b" onclick="A.go('reviews')">${I.scan} ${t('reviews')}</button>`:''}
+ ${st==='ALERTED'&&!dec?`<span class="small mut">${I.eye} ${r.expert?t('expert_items'):t('farmer')}</span>`:''}
+ <button class="btn o sm" onclick="A.recHist('${r.id}')">${I.list}</button></div></div>`;
+}
+function irrigView(){
+ const items=S.ints.filter(i=>['READY','RUNNING','FAILED','ABORTED','DONE'].includes(i.status)).slice().reverse();
+ let sel=items.find(i=>i.id===V.selInt)||items.find(i=>i.status==='RUNNING')||items.find(i=>i.status==='READY')||items[0];
+ const tk=S.tank/TANK_CAP;
+ return `<h1>${I.drop} ${t('irrig')}</h1>
+ ${S.estop?`<div class="banner r">${I.octagon} ${t('estop_on')} ${can('estop_release')?`<button class="btn sm" onclick="A.release()">${I.unlock} ${t('release')}</button>`:''}</div>`:''}
+ <div class="grid g2"><div class="card"><h2>${I.db} ${t('tank')}</h2><div class="hl"><svg viewBox="0 0 60 90" width="60"><rect x="4" y="4" width="52" height="82" rx="8" style="fill:var(--blu-l)" stroke="#9bb5cf" stroke-width="3"/><rect x="7" y="${7+76*(1-tk)}" width="46" height="${76*tk}" rx="5" fill="#5fa4e0"/></svg><div><span class="bignum">${Math.round(S.tank)}</span> m³<div class="small mut">/ ${TANK_CAP} m³ ${src('SIM')}</div></div></div>
+ ${can('tank')?`<div class="chips" style="margin-top:8px"><button class="chip" onclick="A.tank(100)">${I.plus} 100</button><button class="chip" onclick="A.tank(-100)">${I.minus} 100</button><button class="chip" onclick="A.tank(9999)">${I.arrowup} Full</button></div>`:''}</div>
+ <div class="card"><h2>${I.clipboard} ${t('ready_items')}</h2>${items.filter(i=>i.status==='READY'||i.status==='RUNNING').map(i=>`<button class="chip ${sel&&sel.id===i.id?'on':''}" style="margin:0 6px 6px 0" onclick="V.selInt='${i.id}';render()">${I.drop} ${i.zone} · ${i.plan.net} mm · ${t(i.status)}</button>`).join('')||`<p class="mut">${t('no_ready')}</p>`}</div></div>
+ ${sel?intPanel(sel):''}
+ ${can('manual')?`<div class="card"><h2>${I.drop} ${t('manual')}</h2>${zoneChips(V.zone,'A.setZone')}
+ <label class="f">mm (net)</label><input type="range" min="5" max="60" value="${V.manDepth}" oninput="V.manDepth=+this.value;document.getElementById('mdv').textContent=A.manText()" style="padding:0">
+ <div class="hl" style="margin:8px 0"><b id="mdv" style="font-size:18px">${manText()}</b></div>
+ <button class="btn b" onclick="A.manual()">${I.shield} ${t('check_run')}</button><p class="small mut">Manual requests pass the same safety checks; unsafe requests are blocked and logged.</p></div>`:''}
+ <div class="card"><h2>${I.archive} ${t('history')}</h2><div class="tw"><table><tr><th>ID</th><th>${t('zone')}</th><th>mm</th><th>m³</th><th>Status</th><th>${t('verification')}</th><th>${I.star}</th></tr>${S.ints.slice().reverse().slice(0,15).map(i=>`<tr style="cursor:pointer" onclick="V.selInt='${i.id}';render()"><td>${i.id}</td><td>${i.zone}</td><td>${i.plan.net}</td><td>${i.plan.vol}</td><td>${t(i.status)}</td><td>${i.ver?t(i.ver.status)+' ('+i.ver.ratio+')':'—'}</td><td>${i.rating?'★'.repeat(i.rating):''}</td></tr>`).join('')}</table></div></div>`;
+}
+function manText(){const z=Z(V.zone),p=irrPlan(z,V.manDepth);return `${V.zone}: ${p.net} mm · ≈${p.vol} m³ · ≈${p.hrs} h`}
+function intPanel(i){
+ const z=Z(i.zone),checks=i.status==='READY'?safetyChecks(i):i.checks||safetyChecks(i);
+ const canRun=can('execute')&&i.status==='READY'&&!S.estop;
+ const prog=i.status==='RUNNING'?i.progress||0:i.status==='DONE'?1:0;
+ return `<div class="card" style="border:2px solid var(--line)"><h2>${I.drop} ${t('plan')}: ${i.zone} · ${i.plan.net} mm · ${i.plan.vol} m³ · ${i.plan.hrs} h <span class="pill">${i.mode}</span></h2>
+ <div class="grid g2"><div><h3>${I.shield} ${t('safety')}</h3>${checks.map(c=>`<div class="chk ${c.ok?'':'x'}">${c.ok?I.check:I.ban} ${t('c_'+c.k)} <span class="small mut" style="margin-left:auto">${esc(c.d||'')}</span></div>`).join('')}</div>
+ <div style="text-align:center"><h3>${t(i.status)}</h3>
+ <svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" style="stroke:var(--track)" stroke-width="12"/><circle id="ringArc" cx="60" cy="60" r="50" fill="none" stroke="#3d8ed8" stroke-width="12" stroke-linecap="round" stroke-dasharray="${(2*Math.PI*50).toFixed(1)}" stroke-dashoffset="${(2*Math.PI*50*(1-prog)).toFixed(1)}" transform="rotate(-90 60 60)"/><text id="ringTxt" x="60" y="66" text-anchor="middle" font-size="22" font-weight="800" style="fill:var(--blu)">${Math.round(prog*100)}%</text></svg>
+ <div class="small mut" id="runInfo">${i.status==='RUNNING'?`${r1(prog*i.plan.hrs)} / ${i.plan.hrs} h (${t('sim_time')})`:''}</div>
+ <div class="row" style="justify-content:center;margin-top:8px">
+ ${i.status==='READY'?`<button class="btn g big" onclick="A.run('${i.id}')" ${canRun?'':'disabled'}>${I.play} ${t('run')}</button>`:''}
+ ${i.status==='RUNNING'?`<button class="btn r big" onclick="A.stop()">${I.stop} ${t('stop')}</button>`:''}
+ ${i.status==='ABORTED'&&!S.estop&&can('execute')?`<button class="btn g" onclick="A.rearm('${i.id}')">${I.refresh} ${t('run')}</button>`:''}</div>
+ ${!can('execute')&&i.status==='READY'?`<p class="small mut">${I.eye} read only</p>`:''}</div></div>
+ ${i.reasons&&i.reasons.length?`<div class="banner r">${I.ban} Blocked: ${i.reasons.join(', ')}</div>`:''}
+ ${i.ver?`<div class="card" style="background:${i.ver.status==='VERIFIED'?'var(--gr-l)':i.ver.status==='INCONCLUSIVE'?'var(--yel-l)':'var(--red-l)'};margin:12px 0 0"><h2>${i.ver.status==='VERIFIED'?I.check:i.ver.status==='INCONCLUSIVE'?I.help:I.x} ${t('verification')} — ${t(i.ver.status)}</h2>
+ <div class="kpis"><div class="st"><span class="i">${I.target}</span><div><b>${i.ver.exp}</b><small>${t('expected')} m³/m³</small></div></div><div class="st"><span class="i">${I.ruler}</span><div><b>${i.ver.obs}</b><small>${t('observed')} ${src('SIM')}</small></div></div><div class="st"><span class="i">${I.scale}</span><div><b>${i.ver.ratio}</b><small>${t('ratio')}</small></div></div></div>
+ <p class="small mut">${I.calendar} ${t('recount_note')}</p>
+ <h3>${I.star} ${t('feedback')}</h3><div class="stars">${[1,2,3,4,5].map(n=>`<button class="${(i.rating||0)>=n?'on':''}" onclick="A.rate5('${i.id}',${n})" aria-label="${n}">${I.star}</button>`).join('')}</div></div>`:''}</div>`;
+}
+function safetyChecks(i){const z=Z(i.zone),th=S.thr.vals,a=z.a;
+ return [{k:'tank',ok:S.tank>=i.plan.vol,d:`${Math.round(S.tank)} ≥ ${i.plan.vol} m³`},{k:'dur',ok:i.plan.hrs<=z.maxH,d:`${i.plan.hrs} ≤ ${z.maxH} h`},{k:'vol',ok:i.plan.vol<=th.max_vol,d:`${i.plan.vol} ≤ ${th.max_vol} m³`},
+  {k:'rain',ok:!z.forecastRain,d:z.forecastRain?t('ev_rain'):''},{k:'sensors',ok:!!a&&a.faults===0,d:a?`${a.faults} flags`:''},{k:'estop',ok:!S.estop}]}
+function pendingReviews(){const out=[];S.zones.forEach(z=>{z.photos.forEach(p=>{if(p.review&&!p.expertCls&&!p.retakeReq)out.push({type:'img',id:p.id,zone:z.id,reason:p.reasons.join(', '),at:p.ts})});z.labs.forEach(l=>{if(!l.reviewed)out.push({type:'lab',id:l.id,zone:z.id,reason:'lab report',at:l.at})})});return out.sort((a,b)=>a.at-b.at)}
+function reviewsView(){
+ const q=pendingReviews();const sel=q.find(x=>x.id===V.selRev)||q[0];
+ let det='';
+ if(sel&&sel.type==='img'){const p=allPhotos().find(x=>x.id===sel.id);const zp=Z(p.zone).photos;
+  det=`<h2>${I.scan} ${p.id}</h2>${p.img?`<img src="${p.img}" style="width:100%;border-radius:14px;max-height:260px;object-fit:cover">`:''}
+  <p class="small">Model: <b>${p.cls?t(p.cls)+' '+Math.round(p.conf*100)+'%':'—'}</b> · ${t('quality')} ${p.quality} · ${zp.filter(x=>x.review).length} / ${zp.length} flagged in ${p.zone} · ${t(p.part)}${Object.keys(p.symptoms||{}).length?' · user saw: '+Object.keys(p.symptoms).join(', '):''}</p>
+  <div class="opt">${CLASSES.map(k=>`<button class="${(V.revCls||p.cls)===k?'on':''}" onclick="V.revCls='${k}';render()"><span class="i">${CLS_IC[k]}</span>${t(k)}</button>`).join('')}</div>
+  <label class="f">${I.msg} Comment</label><input id="revc" maxlength="200" placeholder="e.g. check leaf and soil test">
+  <div class="row" style="margin-top:12px"><button class="btn g" onclick="A.review('${p.id}','confirm')">${I.check} ${t('confirm')}</button><button class="btn b" onclick="A.review('${p.id}','change')">${I.edit} ${t('change_class')}</button><button class="btn o" onclick="A.review('${p.id}','retake')">${I.camera} ${t('req_photos')}</button></div>`}
+ else if(sel&&sel.type==='lab'){const l=Z(sel.zone).labs.find(x=>x.id===sel.id);
+  det=`<h2>${I.flask} ${l.id} · ${l.zone}</h2><p>${l.type}: ${Object.entries(l.vals).map(([k,v])=>`<b>${k}</b> ${v}`).join(' · ')}</p><p class="small mut">${esc(l.note||'')}</p><div class="banner b">${I.ban} ${t('no_dose')}</div>
+  <label class="f">${I.msg} Comment</label><input id="revc" maxlength="200"><div class="row" style="margin-top:12px"><button class="btn g" onclick="A.reviewLab('${l.zone}','${l.id}')">${I.check} ${t('confirm')}</button></div>`}
+ return `<h1>${I.scan} ${t('reviews')}</h1><div class="grid g2"><div class="card"><h2>${I.inbox} Queue (${q.length})</h2>${q.map(x=>`<button class="chip ${sel&&sel.id===x.id?'on':''}" style="width:100%;margin-bottom:6px;justify-content:flex-start" onclick="V.selRev='${x.id}';V.revCls=null;render()">${x.type==='img'?I.camera:I.flask} ${x.id} · ${x.zone} <span class="small mut" style="margin-left:auto">${esc(x.reason)}</span></button>`).join('')||`<div class="ico xl">${I.inbox}</div><p style="text-align:center">${t('queue_empty')}</p>`}</div>
+ <div class="card">${det||'<p class="mut">—</p>'}</div></div>`;
+}
+function reportsView(){
+ const tabs=[['export',I.download],['thresholds',I.sliders],['users',I.users],['log',I.list]].filter(([k])=>k!=='users'||can('users'));
+ let body='';
+ if(V.repTab==='export'){body=`<div class="tiles">${[['risk',I.bars,'ex_csv_risk'],['recs',I.bulb,'ex_csv_recs'],['ints',I.drop,'ex_csv_int'],['json',I.db,'ex_json']].map(([k,i,l])=>`<button class="tile" onclick="A.exp('${k}')"><span class="i" style="background:var(--neu)">${i}</span>${t(l)}<span class="small mut">${k==='json'?'JSON':'CSV'}</span></button>`).join('')}
+  <label class="tile" style="cursor:pointer"><span class="i" style="background:var(--neu)">${I.refresh}</span>${t('restore')}<span class="small mut">JSON</span><input type="file" accept="application/json" style="display:none" onchange="A.restore(this)"></label></div>
+  ${can('reset')?`<button class="btn o" style="margin-top:16px;color:var(--red)" onclick="A.reset()">${I.trash} ${t('reset')}</button>`:''}
+  <div class="card" style="margin-top:14px"><h2>${I.bars} ${t('risk')}</h2>${chart(S.zones.map((z,i)=>({vals:S.riskHist.filter(h=>h.zone===z.id).slice(-30).map(h=>h.score),color:['#2c8a55','#d9661f','#2a69a8'][i%3]})),{h:160,ymin:0,ymax:100,lines:[{v:25,label:'25',color:'#c99a00'},{v:50,label:'50',color:'#d9661f'},{v:75,label:'75',color:'#c8372d'}]})}<p class="small">${S.zones.map((z,i)=>`<span style="color:${['#2c8a55','#d9661f','#2a69a8'][i%3]};font-weight:800">● ${z.id}</span>`).join(' &nbsp; ')}</p></div>`}
+ if(V.repTab==='thresholds'){const ed=can('thresholds');body=`<div class="card"><h2>${I.sliders} ${t('thresholds')} — v${S.thr.version} <span class="pill sim">unvalidated</span></h2><p class="small mut">Demo values only. Must be validated with ICAR-CCRI guidance and a local agronomist. Each save creates a new version; every risk score records the version it used.</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px">${Object.keys(DEF).map(k=>`<div><label class="f">${k}</label><input id="th_${k}" type="number" step="any" value="${S.thr.vals[k]}" ${ed?'':'disabled'}></div>`).join('')}</div>
+  <div id="thErr" class="small" style="color:var(--red);min-height:18px;margin-top:6px"></div>${ed?`<button class="btn" onclick="A.saveThr()">${I.save} Save as new version</button>`:''}
+  <h3>${t('history')}</h3><div class="tw"><table><tr><th>v</th><th>by</th><th>at</th></tr>${S.thr.hist.slice().reverse().map(h=>`<tr><td>v${h.version}</td><td>${esc(h.by)}</td><td>${fmtT(h.at)}</td></tr>`).join('')}</table></div></div>`}
+ if(V.repTab==='users'&&can('users')){body=`<div class="card"><h2>${I.users} ${t('users')}</h2><div class="tw"><table><tr><th></th><th>${t('name')}</th><th>${t('identifier')}</th><th>${t('role')}</th><th>${t('last_login')}</th><th></th></tr>${S.users.map(u=>`<tr><td style="font-size:18px;color:var(--pri)">${ROLE_IC[u.role]}</td><td>${esc(u.name)}</td><td>${esc(u.identifier)}</td><td><select onchange="A.setRole('${u.id}',this.value)" ${u.id===me().id?'disabled':''}>${['pending','worker','farmer','agronomist','admin','demo'].map(r=>`<option value="${r}" ${u.role===r?'selected':''}>${t(r==='pending'?'pending_role':r)}</option>`).join('')}</select></td><td class="small mut">${u.lastLogin?fmtT(u.lastLogin):'—'}</td><td style="white-space:nowrap">${u.lockUntil>Date.now()?`<button class="btn o sm" onclick="A.unlock('${u.id}')">${I.unlock} ${t('unlock')}</button> `:''}<button class="btn o sm" onclick="A.pwReset('${u.id}')">${I.key} ${t('reset_pw')}</button></td></tr>`).join('')}</table></div></div>`}
+ if(V.repTab==='log'){body=`<div class="card"><h2>${I.list} ${t('log')} <span class="small mut">(append-only)</span></h2><div class="tw"><table><tr><th>Time</th><th>By</th><th>Item</th><th>Change</th><th>Note</th></tr>${S.events.slice().reverse().slice(0,150).map(e=>`<tr><td>${fmtT(e.at)}</td><td>${esc(e.by)}</td><td>${esc(e.entity)} ${esc(e.id)}</td><td>${esc(e.from||'')}${e.from?' → ':''}<b>${esc(e.to)}</b></td><td class="small">${esc(e.note)}</td></tr>`).join('')}</table></div></div>`}
+ return `<h1>${I.folder} ${t('reports')}</h1><div class="tabs">${tabs.map(([k,i])=>`<button class="chip ${V.repTab===k?'on':''}" onclick="V.repTab='${k}';render()">${i} ${t(k)}</button>`).join('')}</div>${body}`;
+}
+function orchardView(){
+ const ed=can('edit_orchard'),o=S.orchard,z=Z(V.zone),sumT=S.zones.reduce((s,x)=>s+x.trees,0);const dis=ed?'':'disabled';
+ const fld=(id,lab,val,step)=>`<div><label class="f">${lab}</label><input id="${id}" type="number" step="${step||'any'}" value="${val}" ${dis}></div>`;
+ return `<h1>${I.tree} ${t('orchard')}</h1><div class="grid g2"><div class="card"><h2>${I.home} ${t('orchard_info')}</h2>
+ <label class="f">${t('name')}</label><input id="o_name" value="${esc(o.name)}" ${dis}>
+ <div class="grid" style="grid-template-columns:1fr 1fr;gap:8px">${fld('o_area','Area (ha)',o.area)}${fld('o_trees','Trees',o.trees,1)}
+ <div><label class="f">Soil</label><select id="o_soil" ${dis}>${['black','medium black','red','sandy loam'].map(s=>`<option ${o.soil===s?'selected':''}>${s}</option>`).join('')}</select></div>
+ <div><label class="f">Irrigation</label><select id="o_irr" ${dis}>${['drip','basin','sprinkler'].map(s=>`<option ${o.irrigation===s?'selected':''}>${s}</option>`).join('')}</select></div></div>
+ <div id="oErr" class="small" style="color:var(--red);min-height:18px;margin-top:6px"></div>${ed?`<button class="btn" onclick="A.saveOrchard()">${I.save} ${t('save')}</button>`:''}</div>
+ <div class="card"><h2>${I.grid} ${t('zones_list')}</h2>${sumT>o.trees?`<div class="banner y">${I.alert} Zone trees (${sumT}) exceed orchard trees (${o.trees})</div>`:''}
+ ${S.zones.map(x=>`<div class="row" style="padding:8px 0;border-bottom:1px solid var(--soft)"><b style="width:40px">${x.id}</b><span>${I.tree} ${x.trees}</span><span class="small mut">${x.area_ha} ha</span><span class="sp"></span><span class="pill">${STAGE_IC[x.stage]} ${t(x.stage)}</span></div>`).join('')}
+ ${ed?`<button class="btn o" style="margin-top:10px" onclick="A.addZone()">${I.plus} ${t('add_zone')}</button>`:''}</div></div>
+ <div class="card"><h2>${I.flask} ${t('soil_setup')||'Soil'} ${z.id}</h2>${zoneChips(V.zone,'A.setZone')}
+ <label class="f">${t('stage')}</label><div class="opt">${STAGES.map(s=>`<button class="${z.stage===s?'on':''}" onclick="A.setStage('${s}')" ${dis}><span class="i">${STAGE_IC[s]}</span>${t(s)}</button>`).join('')}</div>
+ <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:6px">${fld('z_trees','Trees',z.trees,1)}${fld('z_area','Area (ha)',z.area_ha)}${fld('z_fc','θFC',z.fc)}${fld('z_wp','θWP',z.wp)}${fld('z_root','Root depth (m)',z.root)}${fld('z_p','Depletion p',z.p)}${fld('z_ea','Efficiency Ea',z.ea)}${fld('z_max','Max duration (h)',z.maxH)}${fld('z_flow','Flow (m³/h)',z.flow)}${fld('z_fw','Wetted fraction',z.fw)}</div>
+ <p class="small mut">Default soil values are flagged <b>unvalidated</b>.</p><div id="zErr" class="small" style="color:var(--red);min-height:18px"></div>${ed?`<button class="btn" onclick="A.saveZone()">${I.save} ${t('save')}</button>`:''}
+ <h3>${t('history')}</h3><p class="small">${z.stageHist.map(h=>`${STAGE_IC[h.stage]} ${t(h.stage)} (${fmtD(h.at)})`).join(' → ')}</p></div>
+ ${ed?`<div class="card"><h2>${I.inbox} ${t('import_trees')}</h2><p class="small mut">Columns: tree_id, zone, variety, age_years</p><textarea id="csv" rows="4" placeholder="T-001,Z1,Nagpur Mandarin,8&#10;T-002,Z2,Nagpur Mandarin,6"></textarea>
+ <div class="row" style="margin-top:8px"><button class="btn o" onclick="A.importCsv()">${I.inbox} Import</button><label class="btn o">${I.file} File<input type="file" accept=".csv,text/csv" style="display:none" onchange="A.csvFile(this)"></label><span class="small mut">${S.trees.length} trees stored</span></div><div id="csvOut" class="small" style="margin-top:8px"></div></div>`:''}`;
+}
+function allPhotos(){return S.zones.flatMap(z=>z.photos)}
+const SCREENS={home:homeView,dash:dashView,monitor:monitorView,photos:photosView,obs:obsView,recs:recsView,irrig:irrigView,reviews:reviewsView,reports:reportsView,orchard:orchardView};
+function render(){
+ const u=me();
+ if(!u){app.innerHTML=loginView();return}
+ if(u.role==='pending'){app.innerHTML=topBar(u)+`<main><div class="card" style="text-align:center;max-width:520px;margin:40px auto"><div class="ico xl">${I.hourglass}</div><h2 style="justify-content:center">${t('no_access')}</h2></div></main>`;return}
+ if(!canSee(V.scr))V.scr='home';
+ app.innerHTML=`<div class="shell"><aside class="side">${sideBar(u)}</aside><div class="mainwrap">${topBar(u)}<main>${pageWrap(SCREENS[V.scr](u))}</main></div></div><nav class="bnav">${navBtns()}</nav>`;
+ if(V.scr==='obs')A.rate();
+}
+
+/* ---------------------------- actions ---------------------------- */
+let runTimer=null;
+const A={
+ go(s){if(!canSee(s)){toast(`${I.ban} Not permitted for this role`);return}V.scr=s;render();scrollTo(0,0)},
+ close(){document.getElementById('modal').innerHTML=''},
+ theme(){theme=theme==='dark'?'light':'dark';store.set(TKEY,theme);applyTheme();render()},
+ lang(l){lang=l;store.set(LKEY,l);document.documentElement.lang=l;render()},
+ setZone(id){V.zone=id;V.lastPhoto=null;render()},
+ setRecZone(id){V.recZone=id;render()},
+ zoneInfo(id){modal(zoneInfoHtml(id))},
+ toggleOffline(){S.offline=!S.offline;save();if(!isOffline())syncNow();render()},
+ sync(){if(isOffline()){toast(`${I.wifioff} ${t('offline')}`);return}syncNow();render()},
+ demoLogin(id){const u=DEMO_USERS.find(x=>x.id===id);A.doLogin(u.identifier,u.pw,true)},
+ login(){A.doLogin(document.getElementById('li').value.trim(),document.getElementById('lp').value)},
+ doLogin(idf,pw,demo){
+  const e=document.getElementById('lerr');const msg=m=>{if(e){e.textContent=m;e.classList.add('show')}else toast(m)};
+  const id=normId(idf);pw=normPw(pw);
+  if(!id||!pw)return msg(t('need_both'));
+  const u=S.users.find(x=>x.identifier===id);
+  if(!u)return msg(t('no_account'));
+  if(!demo&&u.lockUntil>Date.now())return msg(t('locked',{s:Math.ceil((u.lockUntil-Date.now())/1000)}));
+  if(!checkPw(u,pw)){u.failed=(u.failed||0)+1;
+   if(u.failed>=5){u.lockUntil=Date.now()+30000;u.failed=0;logE(u.name,'AUTH',u.id,'','RATE_LIMITED','5 wrong passwords');save();return msg(t('locked',{s:30}))}
+   save();return msg(t('bad_pw',{n:5-u.failed}))}
+  if(u.ph)setPw(u,pw);
+  u.failed=0;u.lockUntil=0;u.lastLogin=Date.now();startSession(u);
+  V.flash='';V.reg=false;V.scr='home';logE(u.name,'AUTH',u.id,'','LOGIN',demo?'demo account':'');save();render();
+ },
+ register(){const g=id=>document.getElementById(id).value;const n=g('rn').trim(),i=normId(g('ri')),p=normPw(g('rp')),p2=normPw(g('rp2')),e=document.getElementById('lerr');
+  const msg=m=>{e.textContent=m;e.classList.add('show')};
+  if(!n)return msg(t('need_name'));
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i)&&!/^\d{10,13}$/.test(i))return msg(t('bad_id'));
+  if(p.length<6)return msg(t('pw_short'));if(p!==p2)return msg(t('pw_differ'));
+  if(S.users.some(u=>u.identifier===i))return msg(t('id_taken'));
+  const r=V.regRole==='worker'?'worker':'farmer';
+  const u=mkUser(n.slice(0,60),i,p,r);S.users.push(u);logE(n,'USER',u.id,'','REGISTERED','role '+r);save();
+  V.reg=false;A.doLogin(i,p)},
+ unlock(uid){if(!can('users'))return;const u=S.users.find(x=>x.id===uid);u.lockUntil=0;u.failed=0;logE(me().name,'USER',u.id,'LOCKED','UNLOCKED');save();render()},
+ pwReset(uid){if(!can('users'))return;const u=S.users.find(x=>x.id===uid);
+  modal(`<h2>${I.key} ${t('reset_pw')} — ${esc(u.name)}</h2><label class="f">${t('new_pw')}</label><div class="pw"><input id="npw" type="password" autocomplete="new-password" placeholder="${t('pw_short')}"><button type="button" class="pwt" onclick="A.togglePw(this)">${I.eye}</button></div><div id="lerr" class="aerr" role="alert"></div><div class="row" style="margin-top:14px"><button class="btn" onclick="A.doPwReset('${uid}')">${t('save')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`)},
+ doPwReset(uid){const p=normPw(document.getElementById('npw').value),e=document.getElementById('lerr');if(p.length<6){e.textContent=t('pw_short');e.classList.add('show');return}
+  const u=S.users.find(x=>x.id===uid);setPw(u,p);u.failed=0;u.lockUntil=0;logE(me().name,'USER',u.id,'','PASSWORD_RESET');save();A.close();render();toast(`${I.check} ${t('saved')}`)},
+ togglePw(btn){const inp=btn.parentElement.querySelector('input');inp.type=inp.type==='password'?'text':'password';btn.innerHTML=inp.type==='password'?I.eye:I.x},
+ logout(){const u=me();if(u)logE(u.name,'AUTH',u.id,'','LOGOUT');endSession();save();V.scr='home';render()},
+ generate(){
+  if(!can('run_sim'))return toast(`${I.ban} Not permitted for this role`);
+  const seed=parseInt(document.getElementById('seed').value,10);if(!(seed>=0&&seed<=999999))return toast('seed 0–999999');
+  V.simSeed=seed;const z=Z(V.zone);const R=simulate(z,V.simSc,seed,V.simDays,V.simFault);
+  const bad=R.filter(p=>p.q!=='OK').length;logE(me().name,'SIMULATOR',z.id,'',`RUN ${V.simSc}`,`seed ${seed}, ${V.simDays} d, fault ${V.simFault}, ${R.length} rows, ${bad} flagged`);
+  reevaluate();save();render();toast(`${I.check} ${R.length} readings · ${bad} flagged`);
+ },
+ async photoFile(inp){const f=inp.files&&inp.files[0];inp.value='';if(!f)return;
+  if(!/^image\/(jpeg|png|webp)$/.test(f.type))return toast('Please choose a JPEG or PNG photo');if(f.size>15e6)return toast('Photo is too large');
+  const rd=new FileReader();rd.onload=()=>A.processPhoto(rd.result);rd.readAsDataURL(f)},
+ demoPhoto(k){const part=k==='fruit'?'fruit':'leaf';V.photoPart=part;A.processPhoto(demoImage(k))},
+ async processPhoto(dataURL){
+  if(!can('upload'))return toast(`${I.ban} Not permitted for this role`);if(V.busy)return;V.busy=true;
+  try{
+   const img=await loadImg(dataURL);const hash=await sha256(dataURL);
+   if(allPhotos().some(p=>p.hash===hash)){V.busy=false;toast(`${I.image} This photo was already uploaded`);return}
+   const res=screenImage(img,V.photoPart),z=Z(V.zone),th=S.thr.vals;
+   const compact=toJpeg(img,1280,.85);const imgSmall=toJpeg(await loadImg(compact),320,.72);
+   const reasons=[];
+   if(res.quality!=='OK')reasons.push(res.quality);else{
+    if(res.conf<th.conf_min)reasons.push('low confidence');if(res.margin<th.margin_min)reasons.push('top-2 close');if(res.cls==='unknown')reasons.push('unknown');
+    if(ABN.includes(res.cls)&&z.photos.filter(p=>ABN.includes(p.expertCls||p.cls)).length>=2)reasons.push('several in zone')}
+   S.seq.img++;const p={id:'IMG-'+(100+S.seq.img),zone:z.id,part:V.photoPart,stage:z.stage,ts:Date.now(),img:imgSmall,hash,quality:res.quality,
+    cls:res.quality==='OK'?res.cls:null,conf:res.quality==='OK'?res.conf:0,probs:res.quality==='OK'?res.probs:[],margin:res.margin,review:reasons.length>0,reasons,symptoms:{...V.symptoms},by:me().name,src:'IMG',metrics:{mean:res.mean,lapVar:res.lapVar,plant:res.pf}};
+   Object.keys(p.symptoms).forEach(k=>{if(!p.symptoms[k])delete p.symptoms[k]});
+   persist(p,'image');z.photos.unshift(p);if(z.photos.length>24)z.photos.length=24;
+   logE(me().name,'IMAGE',p.id,'',p.quality==='OK'?res.cls:'QUALITY_'+res.quality,`${z.id}, conf ${p.conf}${p.review?', expert review':''}`);
+   V.lastPhoto=p.id;V.symptoms={};reevaluate();save();
+  }catch(e){toast('This image could not be read')}
+  V.busy=false;render();
+ },
+ step(id,d){const el=document.getElementById(id);el.value=Math.max(0,(+el.value||0)+d);A.rate()},
+ rate(){const tg=+document.getElementById('tg')?.value,fl=+document.getElementById('fl')?.value,o=document.getElementById('rateOut');if(!o)return;
+  o.textContent=tg>0?r1(100*fl/tg)+'%':'—';o.style.color=tg>0&&100*fl/tg>=S.thr.vals.drop_guard?'var(--red)':'var(--ink)'},
+ saveDrop(){if(!can('observe'))return toast(`${I.ban} Not permitted for this role`);const e=document.getElementById('obsErr');
+  const tg=+document.getElementById('tg').value,fl=+document.getElementById('fl').value,df=new Date(document.getElementById('df').value).getTime(),dt=new Date(document.getElementById('dt').value).getTime();
+  if(!(Number.isInteger(tg)&&tg>=1&&tg<=100000))return e.textContent='tagged 1–100000';
+  if(!(Number.isInteger(fl)&&fl>=0&&fl<=tg))return e.textContent='0 ≤ fallen ≤ tagged';
+  const days=(dt-df)/864e5;if(!(days>=1&&days<=30))return e.textContent='interval 1–30 days, end after start';
+  if(dt>Date.now()+864e5)return e.textContent='date in future';
+  const z=Z(V.zone);const d=addDrop(z,{tagged:tg,fallen:fl,from:df,to:Math.min(dt+20*36e5,Date.now())},me().name);
+  reevaluate();save();render();toast(`${d.rate>=S.thr.vals.drop_guard?I.alert:I.check} ${t('drop')}: ${d.rate}%`)},
+ saveLab(){if(!can('lab'))return toast(`${I.ban} Not permitted for this role`);const vals={};let bad=false;
+  ['N','P','K','pH','EC','Zn'].forEach(k=>{const v=document.getElementById('lab_'+k).value;if(v!==''){const n=+v;if(!isFinite(n)||n<0||(k==='pH'&&n>14))bad=true;else vals[k]=n}});
+  if(bad)return toast('Please check the values');if(!Object.keys(vals).length)return toast('enter at least one value');
+  const z=Z(V.zone);S.seq.lab++;const l={id:'LAB-'+S.seq.lab,zone:z.id,type:V.labType,vals,note:document.getElementById('lab_note').value.slice(0,200),at:Date.now(),by:me().name,src:'LAB',reviewed:false};
+  persist(l,'lab');z.labs.push(l);logE(me().name,'LAB_RECORD',l.id,'','CREATED',z.id);reevaluate();save();render();toast(`${I.check} ${l.id} saved`)},
+ decide(id,to){const r=S.recs.find(x=>x.id===id);const ok=r.expert?can('decide_expert'):can('decide');if(!ok)return toast(`${I.ban} Not permitted for this role`);if(r.state!=='ALERTED')return toast('Already decided');
+  if(to==='APPROVED'){modal(`<h2>${REC_IC[r.rule]} ${esc(recTitle(r))}</h2>${r.plan?`<p style="font-size:18px">${I.drop} ${r.plan.net} mm · ≈${r.plan.vol} m³ · ≈${r.plan.hrs} h</p>`:`<p>${t('d_'+r.rule)}</p>`}<p class="small mut">${t(r.verify)}</p><div class="row"><button class="btn g big" onclick="A.doDecide('${id}','APPROVED','')">${I.check} ${t('approve')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`);return}
+  modal(`<h2>${to==='DEFERRED'?'':''} ${t('q_reason')}</h2><div class="chips">${['rs1','rs2','rs3','rs4'].map(k=>`<button class="chip" onclick="document.getElementById('rsn').value='${t(k)}'">${t(k)}</button>`).join('')}</div><label class="f">${t('reason')}</label><input id="rsn" maxlength="200"><div class="row" style="margin-top:12px"><button class="btn ${to==='REJECTED'?'r':''}" onclick="A.doDecide('${id}','${to}',document.getElementById('rsn').value)">${to==='DEFERRED'?''+t('defer'):''+t('reject')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`)},
+ doDecide(id,to,reason){const r=S.recs.find(x=>x.id===id);if(to!=='APPROVED'&&!reason.trim())return toast(t('reason')+'?');
+  r.reason=reason.trim().slice(0,200);setState(r,to,me().name,r.reason);r.decidedBy=me().name;persist(r,'decision');
+  if(to==='APPROVED'&&r.plan){S.seq.int++;const it={id:'INT-'+S.seq.int,rec:r.id,zone:r.zone,plan:{...r.plan},status:'READY',mode:'SIM_AUTO',created:Date.now()};S.ints.push(it);V.selInt=it.id;logE(me().name,'INTERVENTION',it.id,'','READY',r.id)}
+  if(to==='APPROVED'&&r.expert&&can('review')){/* agronomist will handle in queue */}
+  save();A.close();render();toast(to==='APPROVED'?`${I.check} ${t('APPROVED')}`:`${I.tick} ${t(to)}`)},
+ reopen(id){const r=S.recs.find(x=>x.id===id);setState(r,'ALERTED',me().name,'reopened');save();render()},
+ markDone(id){const r=S.recs.find(x=>x.id===id);setState(r,'EXECUTED',me().name);reevaluate();save();render()},
+ recHist(id){const r=S.recs.find(x=>x.id===id);modal(`<div class="zh"><h2>${I.list} ${r.id}</h2><button class="ibtn" onclick="A.close()">${I.x}</button></div><p><b>${esc(recTitle(r))}</b> · threshold v${r.ver}</p><div class="tw"><table>${r.hist.map(h=>`<tr><td>${fmtT(h.at)}</td><td><b>${h.to}</b></td><td>${esc(h.by)}</td><td class="small">${esc(h.note)}</td></tr>`).join('')}</table></div>`)},
+ run(id){const i=S.ints.find(x=>x.id===id);if(!can('execute'))return toast(`${I.ban} Not permitted for this role`);if(i.status!=='READY')return toast('Already started');
+  modal(`<h2>${I.play} ${t('run')} — ${i.zone}</h2><p style="font-size:18px">${I.drop} ${i.plan.net} mm · ≈${i.plan.vol} m³ · ≈${i.plan.hrs} h</p><p class="small mut">${t('sim_data')}: no pump or valve is operated.</p><div class="row"><button class="btn g big" onclick="A.doRun('${id}')">${I.play} ${t('run')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`)},
+ doRun(id){A.close();const i=S.ints.find(x=>x.id===id),r=S.recs.find(x=>x.id===i.rec);
+  const checks=safetyChecks(i);i.checks=checks;const fail=checks.filter(c=>!c.ok);
+  if(fail.length){i.status='FAILED';i.reasons=fail.map(c=>c.k.toUpperCase());if(r)setState(r,'FAILED_SAFETY','system',i.reasons.join(','));logE(me().name,'INTERVENTION',i.id,'READY','FAILED_SAFETY',i.reasons.join(','));save();render();toast(`${I.ban} Blocked: `+i.reasons.join(', '));return}
+  i.status='RUNNING';i.start=Date.now();i.progress=0;i.by=me().name;i.reasons=[];logE(me().name,'INTERVENTION',i.id,'READY','RUNNING','SIMULATED');save();A.startTimer();render()},
+ startTimer(){clearInterval(runTimer);runTimer=setInterval(()=>{const i=S.ints.find(x=>x.status==='RUNNING');if(!i){clearInterval(runTimer);return}
+  i.progress=Math.min(1,(Date.now()-i.start)/RUN_MS);
+  const arc=document.getElementById('ringArc');if(arc){arc.setAttribute('stroke-dashoffset',(2*Math.PI*50*(1-i.progress)).toFixed(1));document.getElementById('ringTxt').textContent=Math.round(i.progress*100)+'%';const ri=document.getElementById('runInfo');if(ri)ri.textContent=`${r1(i.progress*i.plan.hrs)} / ${i.plan.hrs} h (${t('sim_time')})`}
+  if(i.progress>=1){clearInterval(runTimer);A.finish(i)}},250)},
+ finish(i){const z=Z(i.zone),r=S.recs.find(x=>x.id===i.rec),th=S.thr.vals,rr=rng(S.seq.int*31+z.idx);
+  i.status='DONE';i.end=Date.now();S.tank=Math.max(0,S.tank-i.plan.vol);
+  if(r)setState(r,'EXECUTED',i.by||'system','simulated irrigation complete');
+  const R=z.readings,last=R[R.length-1];const base=z.a&&z.a.v!=null?z.a.v:(last&&last.vwc)||z.fc-0.05;
+  const exp=r3(i.plan.net/(z.root*1000));const factor=0.78+rr()*0.24;const obs=r3(exp*factor);
+  if(last){R.push({ts:last.ts+Math.max(1,Math.round(i.plan.hrs))*36e5,temp:last.temp,rh:last.rh,rain:0,irr:r1(i.plan.gross),light:0,vwc:r3(Math.min(0.47,base+obs)),soilT:last.soilT,q:'OK'});if(R.length>24*14+40)R.shift()}
+  const ratio=r2(obs/exp);const status=ratio>=th.verify_ok?'VERIFIED':ratio>=th.verify_low?'INCONCLUSIVE':'NOT_VERIFIED';
+  i.ver={exp,obs,ratio,status,at:Date.now()};
+  if(r)setState(r,status,'system',`response ratio ${ratio}`);logE('system','VERIFICATION',i.id,'',status,`expected ${exp}, observed ${obs}`);
+  reevaluate();save();if(V.scr==='irrig'){V.selInt=i.id}render();toast(status==='VERIFIED'?`${I.check} ${t('VERIFIED')}`:`${I.help} ${t(status)}`)},
+ stop(){S.estop=true;S.ints.filter(i=>i.status==='RUNNING').forEach(i=>{i.status='ABORTED';logE(me().name,'INTERVENTION',i.id,'RUNNING','ABORTED','emergency stop')});clearInterval(runTimer);logE(me().name,'SAFETY','E-STOP','','ON');save();render();toast(`${I.octagon} ${t('stop')}`)},
+ release(){if(!can('estop_release'))return toast(`${I.ban} Not permitted for this role`);S.estop=false;logE(me().name,'SAFETY','E-STOP','ON','RELEASED');save();render()},
+ rearm(id){const i=S.ints.find(x=>x.id===id);i.status='READY';i.progress=0;save();render()},
+ tank(d){if(!can('tank'))return;S.tank=clamp(S.tank+d,0,TANK_CAP);logE(me().name,'TANK','tank','',Math.round(S.tank)+' m³');save();render()},
+ manText(){return manText()},
+ manual(){if(!can('manual'))return toast(`${I.ban} Not permitted for this role`);const z=Z(V.zone),plan=irrPlan(z,V.manDepth);
+  const fake={zone:z.id,plan};const checks=safetyChecks(fake),fail=checks.filter(c=>!c.ok);
+  if(fail.length){logE(me().name,'MANUAL_REQUEST',z.id,'','UNSAFE_REQUEST',fail.map(c=>c.k).join(','));save();
+   modal(`<h2>${I.ban} Unsafe request — not created</h2>${checks.map(c=>`<div class="chk ${c.ok?'':'x'}">${c.ok?I.check:I.ban} ${t('c_'+c.k)} <span class="small mut" style="margin-left:auto">${esc(c.d||'')}</span></div>`).join('')}<button class="btn o" onclick="A.close()">OK</button>`);return}
+  S.seq.rec++;const r={id:'REC-'+S.seq.rec,zone:z.id,rule:'MAN',p:2,state:'DETECTED',created:Date.now(),plan,evidence:[{k:'ev_dep',val:z.a&&z.a.Dr!=null?Math.round(z.a.Dr)+' mm':'—',src:'SIM'}],verify:'v_soil',hist:[],ver:S.thr.version,risk:z.risk?{score:z.risk.score,cat:z.risk.cat,unc:z.risk.unc}:null};
+  S.recs.push(r);setState(r,'APPROVED',me().name,'manual override');S.seq.int++;const it={id:'INT-'+S.seq.int,rec:r.id,zone:z.id,plan,status:'READY',mode:'MANUAL',created:Date.now()};S.ints.push(it);V.selInt=it.id;save();render();scrollTo(0,0)},
+ rate5(id,n){const i=S.ints.find(x=>x.id===id);i.rating=n;const r=S.recs.find(x=>x.id===i.rec);if(r)r.rating=n;logE(me().name,'FEEDBACK',i.id,'',n+'★');save();render()},
+ review(pid,act){if(!can('review'))return toast(`${I.ban} Not permitted for this role`);const p=allPhotos().find(x=>x.id===pid);const note=document.getElementById('revc').value.slice(0,200);
+  if(act==='retake'){p.retakeReq=true;p.expertNote=note||t('req_photos');logE(me().name,'REVIEW',p.id,'','RETAKE_REQUESTED',note)}
+  else{const c=act==='confirm'?(p.cls||V.revCls||'unknown'):(V.revCls||p.cls||'unknown');p.expertCls=c;p.expertNote=note;p.expertBy=me().name;logE(me().name,'REVIEW',p.id,p.cls||'',`EXPERT ${c}`,note)}
+  V.revCls=null;V.selRev=null;
+  S.recs.filter(r=>r.zone===p.zone&&r.rule==='R04'&&(r.state==='ALERTED'||r.state==='APPROVED')).forEach(r=>{if(!pendingReviews().some(x=>x.zone===p.zone&&x.type==='img')){if(r.state==='ALERTED')setState(r,'APPROVED',me().name);setState(r,'EXECUTED',me().name,'expert review done')}});
+  reevaluate();save();render();toast(`${I.check} Expert decision saved`)},
+ reviewLab(zid,lid){if(!can('review'))return;const l=Z(zid).labs.find(x=>x.id===lid);l.reviewed=true;l.expertNote=document.getElementById('revc').value.slice(0,200);l.expertBy=me().name;logE(me().name,'REVIEW',l.id,'','EXPERT_READ',l.expertNote);
+  S.recs.filter(r=>r.zone===zid&&r.rule==='R07'&&(r.state==='ALERTED'||r.state==='APPROVED')).forEach(r=>{if(r.state==='ALERTED')setState(r,'APPROVED',me().name);setState(r,'EXECUTED',me().name)});
+  reevaluate();save();render()},
+ saveThr(){if(!can('thresholds'))return toast(`${I.ban} Not permitted for this role`);const nv={},e=document.getElementById('thErr');
+  for(const k of Object.keys(DEF)){const v=+document.getElementById('th_'+k).value;const [lo,hi]=THR_BOUNDS[k];if(!isFinite(v)||v<lo||v>hi){e.textContent=`${I.alert} ${k}: ${lo}–${hi}`;return}nv[k]=v}
+  if(nv.T_low>=nv.T_high)return e.textContent='T_low < T_high';if(nv.RH_crit>=nv.RH_low)return e.textContent='RH_crit < RH_low';if(nv.verify_low>=nv.verify_ok)return e.textContent='verify_low < verify_ok';
+  S.thr.version++;S.thr.vals=nv;S.thr.hist.push({version:S.thr.version,vals:{...nv},at:Date.now(),by:me().name});logE(me().name,'CONFIG','thresholds',`v${S.thr.version-1}`,`v${S.thr.version}`);reevaluate();save();render();toast(`${I.check} Settings v${S.thr.version}`)},
+ setRole(uid,r){if(!can('users'))return toast(`${I.ban} Not permitted for this role`);const u=S.users.find(x=>x.id===uid);const old=u.role;u.role=r;logE(me().name,'USER',u.id,old,r,'role change');save();render();toast(`${I.check} ${t('saved')}`)},
+ exp(k){if(!can('export'))return toast(`${I.ban} Not permitted for this role`);let name,data,type='text/csv';
+  const csv=rows=>rows.map(r=>r.map(v=>`"${String(v??'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  if(k==='risk'){name='risk_history.csv';data=csv([['zone','score','category','threshold_version','at'],...S.riskHist.map(h=>[h.zone,h.score,h.cat,h.ver,new Date(h.at).toISOString()])])}
+  if(k==='recs'){name='recommendations.csv';data=csv([['id','zone','rule','priority','state','created','net_mm','volume_m3','reason','rating'],...S.recs.map(r=>[r.id,r.zone,r.rule,'P'+r.p,r.state,new Date(r.created).toISOString(),r.plan?.net,r.plan?.vol,r.reason,r.rating])])}
+  if(k==='ints'){name='irrigation.csv';data=csv([['id','zone','mode','net_mm','volume_m3','hours','status','verification','ratio','rating','source'],...S.ints.map(i=>[i.id,i.zone,i.mode,i.plan.net,i.plan.vol,i.plan.hrs,i.status,i.ver?.status,i.ver?.ratio,i.rating,'SIMULATED'])])}
+  if(k==='json'){name='bahar_backup.json';type='application/json';data=JSON.stringify({...S,exportedAt:new Date().toISOString(),note:'All sensor data simulated'},null,1)}
+  const b=new Blob([data],{type});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);logE(me().name,'EXPORT',name,'','DOWNLOADED');save()},
+ restore(inp){const f=inp.files[0];inp.value='';if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const d=JSON.parse(rd.result);if(d.v!==1||!Array.isArray(d.zones)||!Array.isArray(d.users))throw 0;delete d.exportedAt;delete d.note;V.pendingRestore=d;
+  modal(`<h2>${I.refresh} ${t('restore')}</h2><p>${t('confirm_restore')}</p><div class="row"><button class="btn" onclick="A.doRestore()">${t('restore')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`)}catch(e){toast('Not a valid backup file')}};rd.readAsText(f)},
+ doRestore(){const d=V.pendingRestore;if(!d)return;V.pendingRestore=null;const who=me()?.name||'?';S=d;ensureUsers();if(!me())endSession();logE(who,'BACKUP','restore','','RESTORED');save();A.close();render();toast(`${I.check} ${t('saved')}`)},
+ reset(){if(!can('reset'))return;modal(`<h2>${I.trash} ${t('reset')}</h2><p>${t('confirm_reset')}</p><div class="row"><button class="btn r" onclick="A.doReset()">${t('reset')}</button><button class="btn o" onclick="A.close()">${t('cancel')}</button></div>`)},
+ doReset(){S=seedState();ensureUsers();if(!me())endSession();save();A.close();render()},
+ saveOrchard(){if(!can('edit_orchard'))return toast(`${I.ban} Not permitted for this role`);const e=document.getElementById('oErr');const name=document.getElementById('o_name').value.trim(),area=+document.getElementById('o_area').value,trees=+document.getElementById('o_trees').value;
+  if(!name||name.length>80)return e.textContent='name 1–80';if(!(area>=0.01&&area<=500))return e.textContent='area 0.01–500 ha';if(!(Number.isInteger(trees)&&trees>=1&&trees<=100000))return e.textContent='trees 1–100000';
+  Object.assign(S.orchard,{name,area,trees,soil:document.getElementById('o_soil').value,irrigation:document.getElementById('o_irr').value});logE(me().name,'ORCHARD',name,'','UPDATED');save();render();toast(`${I.check} ${t('saved')}`)},
+ saveZone(){if(!can('edit_orchard'))return toast(`${I.ban} Not permitted for this role`);const e=document.getElementById('zErr'),g=id=>+document.getElementById(id).value,z=Z(V.zone);
+  const v={trees:g('z_trees'),area_ha:g('z_area'),fc:g('z_fc'),wp:g('z_wp'),root:g('z_root'),p:g('z_p'),ea:g('z_ea'),maxH:g('z_max'),flow:g('z_flow'),fw:g('z_fw')};
+  const rules=[['trees',1,100000],['area_ha',0.01,500],['fc',0.1,0.6],['wp',0.02,0.4],['root',0.2,2],['p',0.2,0.8],['ea',0.5,1],['maxH',0.5,24],['flow',1,500],['fw',0.1,1]];
+  for(const [k,lo,hi] of rules)if(!(isFinite(v[k])&&v[k]>=lo&&v[k]<=hi))return e.textContent=`${I.alert} ${k}: ${lo}–${hi}`;
+  if(v.wp>=v.fc)return e.textContent='θWP must be below θFC';if(!Number.isInteger(v.trees))return e.textContent='trees integer';
+  Object.assign(z,v);flagQuality(z.readings);logE(me().name,'ZONE',z.id,'','UPDATED');reevaluate();save();render();toast(`${I.check} ${t('saved')}`)},
+ setStage(s){if(!can('edit_orchard'))return;const z=Z(V.zone);if(z.stage===s)return;logE(me().name,'ZONE',z.id,z.stage,s,'crop stage');z.stage=s;z.stageHist.push({stage:s,at:Date.now(),by:me().name});reevaluate();save();render()},
+ addZone(){if(!can('edit_orchard'))return;const n=S.zones.length+1;if(n>12)return toast('max 12 zones in MVP');const z=mkZone('Z'+n,n,50,'fruit_set',0.3);S.zones.push(z);simulate(z,'NORMAL',n*13,7,'none');logE(me().name,'ZONE',z.id,'','CREATED','defaults unvalidated');V.zone=z.id;reevaluate();save();render()},
+ importCsv(txt){const out=document.getElementById('csvOut');const text=txt??document.getElementById('csv').value;const lines=text.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);let ok=0;const errs=[];
+  lines.forEach((ln,i)=>{const c=ln.split(',').map(s=>s.trim());if(i===0&&/tree_id/i.test(c[0]))return;const [id,zone,variety,age]=c;
+   if(!id)return errs.push(`row ${i+1}: missing tree_id`);if(!Z(zone))return errs.push(`row ${i+1}: unknown zone "${zone}"`);const ag=+age;if(age&&!(ag>=0&&ag<=80))return errs.push(`row ${i+1}: age 0–80`);
+   if(S.trees.some(t=>t.id===id))return errs.push(`row ${i+1}: duplicate ${id}`);S.trees.push({id,zone,variety:variety||'Nagpur Mandarin',age:age?ag:null});ok++});
+  logE(me().name,'TREES','import','',`${ok} added`,`${errs.length} rejected`);save();render();const o2=document.getElementById('csvOut');if(o2)o2.innerHTML=`${I.check} ${ok} · ${I.ban} ${errs.length}<br>${errs.slice(0,10).map(esc).join('<br>')}`},
+ csvFile(inp){const f=inp.files[0];inp.value='';if(!f)return;const rd=new FileReader();rd.onload=()=>A.importCsv(rd.result);rd.readAsText(f)},
+};
+
+/* ---------------------------- boot ---------------------------- */
+try{S=JSON.parse(store.get(KEY))}catch(e){S=null}
+if(!S||S.v!==1||!Array.isArray(S.zones)){S=seedState()}
+ensureUsers();save();
+document.documentElement.lang=lang;applyTheme();
+if(S.ints.some(i=>i.status==='RUNNING'))A.startTimer();
+window.addEventListener('online',()=>{syncNow();render()});window.addEventListener('offline',render);
+setInterval(()=>{if(SESSION&&!sess())render()},60000);
+render();
+</script>
+</body>
+</html>
